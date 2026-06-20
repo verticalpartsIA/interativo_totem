@@ -1,0 +1,11 @@
+TOTEM INTERATIVO VERTICALPARTS — VERTICAL 9:16
+
+Resolução ideal: 1080 x 1920.
+
+Suba todo o conteúdo para a Hostinger. O arquivo principal é index.html.
+
+Pastas de clientes: assets/clientes/cliente_01 até cliente_55.
+
+Em cada pasta use: capa.jpg, thumb.jpg, 001.jpg, 002.jpg, 003.jpg e metadata.json.
+
+Design baseado no VP Design System: #F5C400, #0f0f0f, #1a1a1f, Inter.

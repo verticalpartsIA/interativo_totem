@@ -1,0 +1,15 @@
+{
+  "id": "cliente_27",
+  "cliente": "Cliente 27",
+  "cidade": "Cidade / UF",
+  "categoria": "Escadas Rolantes",
+  "escopo": "Instalação, modernização ou manutenção especializada",
+  "descricao": "Substitua este texto pela descrição real da obra.",
+  "capa": "assets/clientes/cliente_27/capa.jpg",
+  "thumb": "assets/clientes/cliente_27/thumb.jpg",
+  "imagens": [
+    "assets/clientes/cliente_27/001.jpg",
+    "assets/clientes/cliente_27/002.jpg",
+    "assets/clientes/cliente_27/003.jpg"
+  ]
+}

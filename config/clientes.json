@@ -1,0 +1,827 @@
+[
+  {
+    "id": "cliente_01",
+    "cliente": "Cliente 01",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_01/capa.jpg",
+    "thumb": "assets/clientes/cliente_01/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_01/001.jpg",
+      "assets/clientes/cliente_01/002.jpg",
+      "assets/clientes/cliente_01/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_02",
+    "cliente": "Cliente 02",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_02/capa.jpg",
+    "thumb": "assets/clientes/cliente_02/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_02/001.jpg",
+      "assets/clientes/cliente_02/002.jpg",
+      "assets/clientes/cliente_02/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_03",
+    "cliente": "Cliente 03",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_03/capa.jpg",
+    "thumb": "assets/clientes/cliente_03/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_03/001.jpg",
+      "assets/clientes/cliente_03/002.jpg",
+      "assets/clientes/cliente_03/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_04",
+    "cliente": "Cliente 04",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_04/capa.jpg",
+    "thumb": "assets/clientes/cliente_04/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_04/001.jpg",
+      "assets/clientes/cliente_04/002.jpg",
+      "assets/clientes/cliente_04/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_05",
+    "cliente": "Cliente 05",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_05/capa.jpg",
+    "thumb": "assets/clientes/cliente_05/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_05/001.jpg",
+      "assets/clientes/cliente_05/002.jpg",
+      "assets/clientes/cliente_05/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_06",
+    "cliente": "Cliente 06",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_06/capa.jpg",
+    "thumb": "assets/clientes/cliente_06/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_06/001.jpg",
+      "assets/clientes/cliente_06/002.jpg",
+      "assets/clientes/cliente_06/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_07",
+    "cliente": "Cliente 07",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_07/capa.jpg",
+    "thumb": "assets/clientes/cliente_07/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_07/001.jpg",
+      "assets/clientes/cliente_07/002.jpg",
+      "assets/clientes/cliente_07/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_08",
+    "cliente": "Cliente 08",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_08/capa.jpg",
+    "thumb": "assets/clientes/cliente_08/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_08/001.jpg",
+      "assets/clientes/cliente_08/002.jpg",
+      "assets/clientes/cliente_08/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_09",
+    "cliente": "Cliente 09",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_09/capa.jpg",
+    "thumb": "assets/clientes/cliente_09/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_09/001.jpg",
+      "assets/clientes/cliente_09/002.jpg",
+      "assets/clientes/cliente_09/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_10",
+    "cliente": "Cliente 10",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_10/capa.jpg",
+    "thumb": "assets/clientes/cliente_10/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_10/001.jpg",
+      "assets/clientes/cliente_10/002.jpg",
+      "assets/clientes/cliente_10/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_11",
+    "cliente": "Cliente 11",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_11/capa.jpg",
+    "thumb": "assets/clientes/cliente_11/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_11/001.jpg",
+      "assets/clientes/cliente_11/002.jpg",
+      "assets/clientes/cliente_11/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_12",
+    "cliente": "Cliente 12",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_12/capa.jpg",
+    "thumb": "assets/clientes/cliente_12/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_12/001.jpg",
+      "assets/clientes/cliente_12/002.jpg",
+      "assets/clientes/cliente_12/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_13",
+    "cliente": "Cliente 13",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_13/capa.jpg",
+    "thumb": "assets/clientes/cliente_13/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_13/001.jpg",
+      "assets/clientes/cliente_13/002.jpg",
+      "assets/clientes/cliente_13/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_14",
+    "cliente": "Cliente 14",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_14/capa.jpg",
+    "thumb": "assets/clientes/cliente_14/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_14/001.jpg",
+      "assets/clientes/cliente_14/002.jpg",
+      "assets/clientes/cliente_14/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_15",
+    "cliente": "Cliente 15",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_15/capa.jpg",
+    "thumb": "assets/clientes/cliente_15/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_15/001.jpg",
+      "assets/clientes/cliente_15/002.jpg",
+      "assets/clientes/cliente_15/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_16",
+    "cliente": "Cliente 16",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_16/capa.jpg",
+    "thumb": "assets/clientes/cliente_16/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_16/001.jpg",
+      "assets/clientes/cliente_16/002.jpg",
+      "assets/clientes/cliente_16/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_17",
+    "cliente": "Cliente 17",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_17/capa.jpg",
+    "thumb": "assets/clientes/cliente_17/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_17/001.jpg",
+      "assets/clientes/cliente_17/002.jpg",
+      "assets/clientes/cliente_17/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_18",
+    "cliente": "Cliente 18",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_18/capa.jpg",
+    "thumb": "assets/clientes/cliente_18/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_18/001.jpg",
+      "assets/clientes/cliente_18/002.jpg",
+      "assets/clientes/cliente_18/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_19",
+    "cliente": "Cliente 19",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_19/capa.jpg",
+    "thumb": "assets/clientes/cliente_19/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_19/001.jpg",
+      "assets/clientes/cliente_19/002.jpg",
+      "assets/clientes/cliente_19/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_20",
+    "cliente": "Cliente 20",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_20/capa.jpg",
+    "thumb": "assets/clientes/cliente_20/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_20/001.jpg",
+      "assets/clientes/cliente_20/002.jpg",
+      "assets/clientes/cliente_20/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_21",
+    "cliente": "Cliente 21",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_21/capa.jpg",
+    "thumb": "assets/clientes/cliente_21/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_21/001.jpg",
+      "assets/clientes/cliente_21/002.jpg",
+      "assets/clientes/cliente_21/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_22",
+    "cliente": "Cliente 22",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_22/capa.jpg",
+    "thumb": "assets/clientes/cliente_22/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_22/001.jpg",
+      "assets/clientes/cliente_22/002.jpg",
+      "assets/clientes/cliente_22/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_23",
+    "cliente": "Cliente 23",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_23/capa.jpg",
+    "thumb": "assets/clientes/cliente_23/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_23/001.jpg",
+      "assets/clientes/cliente_23/002.jpg",
+      "assets/clientes/cliente_23/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_24",
+    "cliente": "Cliente 24",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_24/capa.jpg",
+    "thumb": "assets/clientes/cliente_24/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_24/001.jpg",
+      "assets/clientes/cliente_24/002.jpg",
+      "assets/clientes/cliente_24/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_25",
+    "cliente": "Cliente 25",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_25/capa.jpg",
+    "thumb": "assets/clientes/cliente_25/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_25/001.jpg",
+      "assets/clientes/cliente_25/002.jpg",
+      "assets/clientes/cliente_25/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_26",
+    "cliente": "Cliente 26",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_26/capa.jpg",
+    "thumb": "assets/clientes/cliente_26/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_26/001.jpg",
+      "assets/clientes/cliente_26/002.jpg",
+      "assets/clientes/cliente_26/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_27",
+    "cliente": "Cliente 27",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_27/capa.jpg",
+    "thumb": "assets/clientes/cliente_27/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_27/001.jpg",
+      "assets/clientes/cliente_27/002.jpg",
+      "assets/clientes/cliente_27/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_28",
+    "cliente": "Cliente 28",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_28/capa.jpg",
+    "thumb": "assets/clientes/cliente_28/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_28/001.jpg",
+      "assets/clientes/cliente_28/002.jpg",
+      "assets/clientes/cliente_28/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_29",
+    "cliente": "Cliente 29",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_29/capa.jpg",
+    "thumb": "assets/clientes/cliente_29/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_29/001.jpg",
+      "assets/clientes/cliente_29/002.jpg",
+      "assets/clientes/cliente_29/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_30",
+    "cliente": "Cliente 30",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_30/capa.jpg",
+    "thumb": "assets/clientes/cliente_30/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_30/001.jpg",
+      "assets/clientes/cliente_30/002.jpg",
+      "assets/clientes/cliente_30/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_31",
+    "cliente": "Cliente 31",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_31/capa.jpg",
+    "thumb": "assets/clientes/cliente_31/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_31/001.jpg",
+      "assets/clientes/cliente_31/002.jpg",
+      "assets/clientes/cliente_31/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_32",
+    "cliente": "Cliente 32",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_32/capa.jpg",
+    "thumb": "assets/clientes/cliente_32/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_32/001.jpg",
+      "assets/clientes/cliente_32/002.jpg",
+      "assets/clientes/cliente_32/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_33",
+    "cliente": "Cliente 33",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_33/capa.jpg",
+    "thumb": "assets/clientes/cliente_33/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_33/001.jpg",
+      "assets/clientes/cliente_33/002.jpg",
+      "assets/clientes/cliente_33/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_34",
+    "cliente": "Cliente 34",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_34/capa.jpg",
+    "thumb": "assets/clientes/cliente_34/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_34/001.jpg",
+      "assets/clientes/cliente_34/002.jpg",
+      "assets/clientes/cliente_34/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_35",
+    "cliente": "Cliente 35",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_35/capa.jpg",
+    "thumb": "assets/clientes/cliente_35/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_35/001.jpg",
+      "assets/clientes/cliente_35/002.jpg",
+      "assets/clientes/cliente_35/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_36",
+    "cliente": "Cliente 36",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_36/capa.jpg",
+    "thumb": "assets/clientes/cliente_36/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_36/001.jpg",
+      "assets/clientes/cliente_36/002.jpg",
+      "assets/clientes/cliente_36/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_37",
+    "cliente": "Cliente 37",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_37/capa.jpg",
+    "thumb": "assets/clientes/cliente_37/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_37/001.jpg",
+      "assets/clientes/cliente_37/002.jpg",
+      "assets/clientes/cliente_37/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_38",
+    "cliente": "Cliente 38",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_38/capa.jpg",
+    "thumb": "assets/clientes/cliente_38/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_38/001.jpg",
+      "assets/clientes/cliente_38/002.jpg",
+      "assets/clientes/cliente_38/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_39",
+    "cliente": "Cliente 39",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_39/capa.jpg",
+    "thumb": "assets/clientes/cliente_39/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_39/001.jpg",
+      "assets/clientes/cliente_39/002.jpg",
+      "assets/clientes/cliente_39/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_40",
+    "cliente": "Cliente 40",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_40/capa.jpg",
+    "thumb": "assets/clientes/cliente_40/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_40/001.jpg",
+      "assets/clientes/cliente_40/002.jpg",
+      "assets/clientes/cliente_40/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_41",
+    "cliente": "Cliente 41",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_41/capa.jpg",
+    "thumb": "assets/clientes/cliente_41/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_41/001.jpg",
+      "assets/clientes/cliente_41/002.jpg",
+      "assets/clientes/cliente_41/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_42",
+    "cliente": "Cliente 42",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_42/capa.jpg",
+    "thumb": "assets/clientes/cliente_42/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_42/001.jpg",
+      "assets/clientes/cliente_42/002.jpg",
+      "assets/clientes/cliente_42/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_43",
+    "cliente": "Cliente 43",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_43/capa.jpg",
+    "thumb": "assets/clientes/cliente_43/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_43/001.jpg",
+      "assets/clientes/cliente_43/002.jpg",
+      "assets/clientes/cliente_43/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_44",
+    "cliente": "Cliente 44",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_44/capa.jpg",
+    "thumb": "assets/clientes/cliente_44/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_44/001.jpg",
+      "assets/clientes/cliente_44/002.jpg",
+      "assets/clientes/cliente_44/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_45",
+    "cliente": "Cliente 45",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_45/capa.jpg",
+    "thumb": "assets/clientes/cliente_45/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_45/001.jpg",
+      "assets/clientes/cliente_45/002.jpg",
+      "assets/clientes/cliente_45/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_46",
+    "cliente": "Cliente 46",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_46/capa.jpg",
+    "thumb": "assets/clientes/cliente_46/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_46/001.jpg",
+      "assets/clientes/cliente_46/002.jpg",
+      "assets/clientes/cliente_46/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_47",
+    "cliente": "Cliente 47",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_47/capa.jpg",
+    "thumb": "assets/clientes/cliente_47/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_47/001.jpg",
+      "assets/clientes/cliente_47/002.jpg",
+      "assets/clientes/cliente_47/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_48",
+    "cliente": "Cliente 48",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_48/capa.jpg",
+    "thumb": "assets/clientes/cliente_48/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_48/001.jpg",
+      "assets/clientes/cliente_48/002.jpg",
+      "assets/clientes/cliente_48/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_49",
+    "cliente": "Cliente 49",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_49/capa.jpg",
+    "thumb": "assets/clientes/cliente_49/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_49/001.jpg",
+      "assets/clientes/cliente_49/002.jpg",
+      "assets/clientes/cliente_49/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_50",
+    "cliente": "Cliente 50",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_50/capa.jpg",
+    "thumb": "assets/clientes/cliente_50/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_50/001.jpg",
+      "assets/clientes/cliente_50/002.jpg",
+      "assets/clientes/cliente_50/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_51",
+    "cliente": "Cliente 51",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_51/capa.jpg",
+    "thumb": "assets/clientes/cliente_51/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_51/001.jpg",
+      "assets/clientes/cliente_51/002.jpg",
+      "assets/clientes/cliente_51/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_52",
+    "cliente": "Cliente 52",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_52/capa.jpg",
+    "thumb": "assets/clientes/cliente_52/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_52/001.jpg",
+      "assets/clientes/cliente_52/002.jpg",
+      "assets/clientes/cliente_52/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_53",
+    "cliente": "Cliente 53",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_53/capa.jpg",
+    "thumb": "assets/clientes/cliente_53/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_53/001.jpg",
+      "assets/clientes/cliente_53/002.jpg",
+      "assets/clientes/cliente_53/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_54",
+    "cliente": "Cliente 54",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_54/capa.jpg",
+    "thumb": "assets/clientes/cliente_54/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_54/001.jpg",
+      "assets/clientes/cliente_54/002.jpg",
+      "assets/clientes/cliente_54/003.jpg"
+    ]
+  },
+  {
+    "id": "cliente_55",
+    "cliente": "Cliente 55",
+    "cidade": "Cidade / UF",
+    "categoria": "Escadas Rolantes",
+    "escopo": "Instalação, modernização ou manutenção especializada",
+    "descricao": "Substitua este texto pela descrição real da obra.",
+    "capa": "assets/clientes/cliente_55/capa.jpg",
+    "thumb": "assets/clientes/cliente_55/thumb.jpg",
+    "imagens": [
+      "assets/clientes/cliente_55/001.jpg",
+      "assets/clientes/cliente_55/002.jpg",
+      "assets/clientes/cliente_55/003.jpg"
+    ]
+  }
+]

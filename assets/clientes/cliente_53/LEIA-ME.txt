@@ -1,0 +1,10 @@
+Coloque aqui as imagens deste cliente/obra.
+
+Nomes recomendados:
+- capa.jpg
+- thumb.jpg
+- 001.jpg
+- 002.jpg
+- 003.jpg
+
+Edite metadata.json para alterar nome, cidade, categoria e descrição.
