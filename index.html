@@ -93,13 +93,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
 /* ═══════════════════════════════════════════════════════════ */
 /*  SCREEN 1 — ATTRACT (Canva layout)                        */
 /* ═══════════════════════════════════════════════════════════ */
-#s-attract{background:#0a0a0a;display:flex;flex-direction:column}
+#s-attract{background:#0a0a0a}
 
-/* Hero top 36% */
+/* Hero: ocupa os primeiros 37% da altura */
 .attract-hero-wrap{
-  position:relative;
-  height:36%;
-  flex-shrink:0;
+  position:absolute;
+  top:0;left:0;right:0;
+  height:37%;
   overflow:hidden;
 }
 .attract-hero-wrap > img.hero-photo{
@@ -110,45 +110,51 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
   0%  {transform:scale(1)   translate(0,0)}
   100%{transform:scale(1.08) translate(-1.5%,-.5%)}
 }
-/* curved dark bottom edge */
+/* arco escuro cobrindo a base do hero */
 .attract-hero-wrap::after{
-  content:'';position:absolute;left:-5%;right:-5%;bottom:-1px;
-  height:30%;
+  content:'';
+  position:absolute;left:-10%;right:-10%;bottom:-1px;
+  height:35%;
   background:#0a0a0a;
   border-radius:50% 50% 0 0 / 100% 100% 0 0;
 }
-/* logo top-left inside hero */
+/* Logo: canto superior esquerdo, DENTRO do hero */
 .attract-logo-wrap{
-  position:absolute;top:16px;left:16px;z-index:10;
+  position:absolute;top:18px;left:18px;z-index:20;
+  line-height:0;
 }
-.attract-logo-wrap img{
-  height:52px;width:auto;max-width:200px;display:block;
+.attract-logo-wrap img.attract-logo{
+  display:block !important;
+  width:160px !important;
+  height:auto !important;
+  max-height:56px !important;
+  object-fit:contain;
 }
 
-/* Nav rows — fill remaining 64% */
+/* Nav rows: ocupam de 37% ao fim da tela */
 .attract-nav{
-  flex:1;
-  display:flex;flex-direction:column;
+  position:absolute;
+  top:37%;left:0;right:0;bottom:0;
+  display:grid;
+  grid-template-rows:repeat(4,1fr);
   gap:10px;
-  padding:12px 18px 18px;
+  padding:10px 16px 14px;
 }
 .attract-row{
-  flex:1;
-  display:flex;align-items:stretch;gap:10px;
+  display:grid;
+  grid-template-columns:32% 1fr;
+  gap:10px;
   cursor:pointer;
   transition:transform .12s;
   min-height:0;
 }
 .attract-row:active{transform:scale(.97)}
 .attract-row-img{
-  width:32%;
-  flex-shrink:0;
   border-radius:18px;
   overflow:hidden;
 }
 .attract-row-img img{width:100%;height:100%;object-fit:cover;display:block}
 .attract-row-pill{
-  flex:1;
   background:var(--gold);
   border-radius:18px;
   display:flex;align-items:center;justify-content:center;
@@ -158,10 +164,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
   font-family:'Playfair Display',Georgia,serif;
   font-style:italic;
   font-weight:700;
-  font-size:clamp(24px,3.8%,42px);
+  font-size:clamp(22px,3.5%,40px);
   color:#000;
   text-align:center;
-  line-height:1.15;
+  line-height:1.2;
 }
 
 /* ═══════════════════════════════════════════════════════════ */
