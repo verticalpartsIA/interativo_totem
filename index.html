@@ -93,15 +93,16 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
 /* ═══════════════════════════════════════════════════════════ */
 /*  SCREEN 1 — ATTRACT (Canva layout)                        */
 /* ═══════════════════════════════════════════════════════════ */
-#s-attract{background:#0a0a0a;flex-direction:column}
+#s-attract{background:#0a0a0a;display:flex;flex-direction:column}
 
-/* Hero top ~38% */
+/* Hero top 36% */
 .attract-hero-wrap{
   position:relative;
-  flex:0 0 38%;
+  height:36%;
+  flex-shrink:0;
   overflow:hidden;
 }
-.attract-hero-wrap img{
+.attract-hero-wrap > img.hero-photo{
   width:100%;height:100%;object-fit:cover;display:block;
   animation:kenBurns 18s ease-in-out infinite alternate;
 }
@@ -109,56 +110,55 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
   0%  {transform:scale(1)   translate(0,0)}
   100%{transform:scale(1.08) translate(-1.5%,-.5%)}
 }
-/* curved dark overlay at bottom of hero */
+/* curved dark bottom edge */
 .attract-hero-wrap::after{
-  content:'';position:absolute;left:0;right:0;bottom:-2px;
-  height:38%;
+  content:'';position:absolute;left:-5%;right:-5%;bottom:-1px;
+  height:30%;
   background:#0a0a0a;
-  border-radius:55% 55% 0 0 / 100% 100% 0 0;
+  border-radius:50% 50% 0 0 / 100% 100% 0 0;
 }
-/* logo inside hero */
+/* logo top-left inside hero */
 .attract-logo-wrap{
-  position:absolute;top:clamp(16px,3%,32px);left:clamp(16px,3%,32px);
-  z-index:5;
-  display:flex;align-items:center;gap:10px;
+  position:absolute;top:16px;left:16px;z-index:10;
 }
-.attract-logo-wrap img{height:clamp(44px,7%,72px);width:auto}
+.attract-logo-wrap img{
+  height:52px;width:auto;max-width:200px;display:block;
+}
 
-/* Nav rows bottom ~62% */
+/* Nav rows — fill remaining 64% */
 .attract-nav{
   flex:1;
   display:flex;flex-direction:column;
-  gap:clamp(10px,1.8%,18px);
-  padding:clamp(8px,1.5%,16px) clamp(16px,3%,28px) clamp(16px,3%,28px);
-  justify-content:center;
+  gap:10px;
+  padding:12px 18px 18px;
 }
 .attract-row{
-  display:flex;align-items:center;gap:clamp(10px,1.8%,18px);
+  flex:1;
+  display:flex;align-items:stretch;gap:10px;
   cursor:pointer;
-  transition:transform .15s;
-  flex:1;max-height:clamp(90px,15%,140px);
+  transition:transform .12s;
+  min-height:0;
 }
 .attract-row:active{transform:scale(.97)}
 .attract-row-img{
-  flex:0 0 clamp(90px,28%,170px);
-  height:100%;
-  border-radius:clamp(14px,2.5%,24px);
-  overflow:hidden;
+  width:32%;
   flex-shrink:0;
+  border-radius:18px;
+  overflow:hidden;
 }
 .attract-row-img img{width:100%;height:100%;object-fit:cover;display:block}
 .attract-row-pill{
-  flex:1;height:100%;
+  flex:1;
   background:var(--gold);
-  border-radius:clamp(14px,2.5%,40px);
+  border-radius:18px;
   display:flex;align-items:center;justify-content:center;
-  padding:0 clamp(14px,2.5%,28px);
+  padding:0 16px;
 }
 .attract-row-pill span{
   font-family:'Playfair Display',Georgia,serif;
   font-style:italic;
   font-weight:700;
-  font-size:clamp(22px,4%,44px);
+  font-size:clamp(24px,3.8%,42px);
   color:#000;
   text-align:center;
   line-height:1.15;
@@ -427,7 +427,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
 
   <!-- Hero photo top -->
   <div class="attract-hero-wrap">
-    <img src="assets/clientes/aeroporto_brasilia/001.jpg" alt="Escada rolante VerticalParts">
+    <img class="hero-photo" src="assets/clientes/aeroporto_brasilia/001.jpg" alt="Escada rolante VerticalParts">
     <div class="attract-logo-wrap">
       <img class="attract-logo" src="" alt="VerticalParts">
     </div>
