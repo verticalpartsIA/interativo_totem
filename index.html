@@ -492,31 +492,76 @@
       pointer-events: none;
     }
 
-    /* Fallback when image 404s — gradient with gold orb, not flat black */
+    /* ─────────────────────────────────────────────────
+       PLACEHOLDER — base + 4 visual themes
+       ───────────────────────────────────────────────── */
     .slide-placeholder {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
+      display: none;
+      align-items: center; justify-content: center;
+      /* default = vt-dark */
       background:
         radial-gradient(ellipse 80% 60% at 70% 30%, rgba(245,196,0,0.08) 0%, transparent 60%),
         radial-gradient(ellipse 50% 40% at 20% 80%, rgba(180,100,0,0.05) 0%, transparent 55%),
         linear-gradient(160deg, #131008 0%, #080604 55%, #060508 100%);
-      display: none;
-      align-items: center;
-      justify-content: center;
     }
-
-    .slide-placeholder.shown {
-      display: flex;
-    }
+    .slide-placeholder.shown { display: flex; }
 
     .slide-placeholder-mark {
-      font-size: 96px;
-      font-weight: 900;
-      letter-spacing: -4px;
-      color: var(--accent);
-      opacity: 0.15;
-      line-height: 1;
+      width: 160px; height: 160px;
+      object-fit: contain;
+      opacity: 0.12;
+      pointer-events: none;
     }
+
+    /* ── VT-GOLD: bright yellow, dark text ── */
+    .slide.vt-gold .slide-placeholder {
+      background: linear-gradient(145deg, #FFD700 0%, #F5C400 40%, #E8A000 80%, #C87800 100%);
+    }
+    .slide.vt-gold .slide-placeholder-mark { opacity: 0.18; filter: brightness(0); }
+    .slide.vt-gold .slide-overlay {
+      background: linear-gradient(to top,
+        rgba(80,44,0,0.88) 0%, rgba(100,55,0,0.42) 32%,
+        rgba(200,140,0,0.06) 62%, rgba(60,35,0,0.18) 100%);
+    }
+    .slide.vt-gold .slide-client { color: #06050A; }
+    .slide.vt-gold .slide-city   { color: rgba(6,5,10,0.62); }
+    .slide.vt-gold .slide-desc   { color: rgba(6,5,10,0.58); }
+    .slide.vt-gold .slide-category {
+      background: rgba(6,5,10,0.14); border-color: rgba(6,5,10,0.22); color: #06050A;
+    }
+    .slide.vt-gold .slide-stat-chip {
+      border-color: rgba(6,5,10,0.18); background: rgba(6,5,10,0.07); color: rgba(6,5,10,0.62);
+    }
+    .slide.vt-gold .slide-counter        { color: rgba(6,5,10,0.4); }
+    .slide.vt-gold .slide-progress-track { background: rgba(6,5,10,0.1); }
+    .slide.vt-gold .slide-progress-fill  { background: #06050A; }
+    .slide.vt-gold .slide-dot            { background: rgba(6,5,10,0.2); }
+    .slide.vt-gold .slide-dot.active     { background: #06050A; }
+
+    /* ── VT-LIGHT: cream/white, warm ── */
+    .slide.vt-light .slide-placeholder {
+      background: linear-gradient(145deg, #FAFAF5 0%, #F5F0E8 50%, #EDE8DC 100%);
+    }
+    .slide.vt-light .slide-placeholder-mark { opacity: 0.1; filter: brightness(0); }
+    .slide.vt-light .slide-overlay {
+      background: linear-gradient(to top,
+        rgba(20,14,4,0.92) 0%, rgba(25,18,6,0.52) 32%,
+        rgba(240,237,230,0.05) 60%, rgba(220,215,200,0.18) 100%);
+    }
+
+    /* ── VT-AMBER: deep warm dark ── */
+    .slide.vt-amber .slide-placeholder {
+      background:
+        radial-gradient(ellipse 70% 50% at 65% 25%, rgba(245,196,0,0.2) 0%, transparent 55%),
+        linear-gradient(145deg, #1F1200 0%, #2A1800 45%, #0F0800 100%);
+    }
+    .slide.vt-amber .slide-overlay {
+      background: linear-gradient(to top,
+        rgba(10,5,0,0.94) 0%, rgba(28,15,0,0.56) 35%,
+        rgba(20,12,0,0.08) 62%, rgba(10,5,0,0.26) 100%);
+    }
+    /* vt-dark keeps default overlay (already defined above) */
 
     /* ─── Top bar ─── */
     .slide-topbar {
@@ -1253,9 +1298,16 @@
     updateUI(0, false);
   }
 
+  const THEMES       = ['vt-dark', 'vt-gold', 'vt-light', 'vt-amber'];
+  const LOGO_COLOR   = 'https://raw.githubusercontent.com/verticalpartsIA/vp-design-system/master/public/logo-color.png';
+  const LOGO_MARK    = 'https://raw.githubusercontent.com/verticalpartsIA/vp-design-system/master/public/logo-mark.png';
+
   function createSlideEl(data, idx) {
     const el = document.createElement('div');
-    el.className = 'slide';
+    // Assign theme based on which client group this slide belongs to
+    const clientIdx = Math.floor(idx / (data.totalPhotos || 5));
+    const theme = THEMES[clientIdx % THEMES.length];
+    el.className = `slide ${theme}`;
     el.dataset.index = idx;
 
     /* Photo */
@@ -1266,7 +1318,7 @@
 
     const placeholder = document.createElement('div');
     placeholder.className = 'slide-placeholder';
-    placeholder.innerHTML = `<span class="slide-placeholder-mark">VP</span>`;
+    placeholder.innerHTML = `<img class="slide-placeholder-mark" src="${LOGO_MARK}" alt="">`;
     img.addEventListener('error', () => {
       img.style.display = 'none';
       placeholder.classList.add('shown');
@@ -1280,8 +1332,13 @@
     const topbar = document.createElement('div');
     topbar.className = 'slide-topbar';
     const counterStr = `${String(idx + 1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
+    // On gold/light themes the topbar background is bright — use dark logo-mark
+    const topLogoSrc = (theme === 'vt-gold' || theme === 'vt-light') ? LOGO_MARK : LOGO_COLOR;
+    const topLogoStyle = (theme === 'vt-gold' || theme === 'vt-light')
+      ? 'height:28px;width:auto;filter:brightness(0);opacity:0.5'
+      : 'height:24px;width:auto;opacity:0.85';
     topbar.innerHTML = `
-      <div class="slide-logo"><img src="https://raw.githubusercontent.com/verticalpartsIA/vp-design-system/master/public/logo-color.png" alt="VerticalParts"></div>
+      <div class="slide-logo"><img src="${topLogoSrc}" alt="VerticalParts" style="${topLogoStyle}"></div>
       <div class="slide-counter">${counterStr}</div>
     `;
 
