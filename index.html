@@ -1,13 +1,1107 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/><title>Totem Interativo VerticalParts</title><style>
-:root{--vp-primary:#F5C400;--vp-primary-dark:#C99E00;--vp-primary-light:#FFD400;--vp-surface:#0f0f0f;--vp-card:#1a1a1f;--vp-elevated:#222228;--vp-white:#fff;--vp-muted:#a1a1aa;--radius:30px}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050505;font-family:Inter,Arial,Helvetica,sans-serif;color:#fff;touch-action:manipulation}body{display:flex;align-items:center;justify-content:center}.stage{width:min(100vw,calc(100vh * 9 / 16));height:min(100vh,calc(100vw * 16 / 9));aspect-ratio:9/16;background:var(--vp-surface);overflow:hidden;position:relative;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 40px 120px rgba(0,0,0,.55)}.screen{position:absolute;inset:0;display:none;padding:54px 46px;animation:enter .32s ease both}.screen.active{display:flex;flex-direction:column}@keyframes enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.brand{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;position:relative;z-index:5}.logo{font-size:48px;font-weight:950;letter-spacing:-2px;line-height:.95;color:#fff}.logo strong{color:var(--vp-primary)}.site{max-width:290px;text-align:right;color:var(--vp-muted);font-size:20px;font-weight:700;line-height:1.2}.home-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,15,15,.18) 0%,rgba(15,15,15,.72) 48%,rgba(15,15,15,1) 100%),url("assets/demo_escada_full.jpg");background-size:cover;background-position:center;animation:zoom 16s ease-in-out infinite alternate;filter:saturate(.95) contrast(1.08)}@keyframes zoom{from{transform:scale(1.02)}to{transform:scale(1.11)}}.gold-line{width:96px;height:7px;border-radius:999px;background:var(--vp-primary);margin:34px 0 0;position:relative;z-index:4}.hero-copy{margin-top:auto;position:relative;z-index:4;padding-bottom:34px}.kicker{display:inline-flex;padding:13px 19px;border:1px solid rgba(245,196,0,.55);color:var(--vp-primary);border-radius:999px;font-size:19px;letter-spacing:1px;font-weight:900;background:rgba(15,15,15,.72);margin-bottom:22px}h1{margin:0;font-size:66px;line-height:.98;letter-spacing:-3px;font-weight:950}.lead{margin:24px 0 0;font-size:28px;line-height:1.28;color:#e5e5e5;font-weight:500}.primary{border:none;width:100%;min-height:98px;border-radius:25px;background:linear-gradient(135deg,var(--vp-primary-light),var(--vp-primary));color:#111;font-size:31px;font-weight:950;margin-top:38px;box-shadow:0 22px 60px rgba(245,196,0,.25);cursor:pointer}.primary:active,.tile:active,.navbtn:active,.gallery-card:active{transform:scale(.985)}.title{margin:50px 0 14px;font-size:52px;line-height:1.02;letter-spacing:-2px;font-weight:950}.subtitle{margin:0 0 28px;font-size:24px;line-height:1.32;color:var(--vp-muted)}.menu-list{display:flex;flex-direction:column;gap:18px;margin-top:20px}.tile{border:1px solid rgba(255,255,255,.08);background:linear-gradient(145deg,var(--vp-card),var(--vp-elevated));color:white;border-radius:28px;min-height:154px;padding:26px;display:flex;align-items:center;gap:24px;text-align:left;box-shadow:0 18px 44px rgba(0,0,0,.28);cursor:pointer}.icon{width:74px;height:74px;border-radius:22px;background:var(--vp-primary);color:#111;display:flex;align-items:center;justify-content:center;font-size:35px;font-weight:950;flex:none}.tile h2{margin:0 0 8px;font-size:31px;line-height:1;color:#fff}.tile p{margin:0;color:var(--vp-muted);font-size:20px;line-height:1.22}.photo{position:relative;height:690px;overflow:hidden;border-radius:32px;background:#111;border:1px solid rgba(255,255,255,.08);box-shadow:0 22px 64px rgba(0,0,0,.34);margin-top:14px}.photo img{width:100%;height:100%;object-fit:cover;display:block}.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,15,15,.86),rgba(15,15,15,.05) 54%)}.photo-copy{position:absolute;left:28px;right:28px;bottom:28px;z-index:2}.photo-copy h3{font-size:36px;line-height:1;margin:0 0 12px}.photo-copy p{font-size:22px;line-height:1.28;color:#e7e7e7;margin:0}.chips{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}.chip{padding:20px 18px;border-radius:22px;background:rgba(245,196,0,.1);border:1px solid rgba(245,196,0,.25);color:var(--vp-primary);font-weight:850;font-size:21px;min-height:86px;display:flex;align-items:center}.bottom-nav{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}.navbtn{border:none;min-height:78px;border-radius:22px;font-size:23px;font-weight:950;background:var(--vp-elevated);color:white;cursor:pointer}.navbtn.gold{background:var(--vp-primary);color:#111}.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;overflow:hidden;max-height:1320px;padding-right:2px}.gallery-card{min-height:222px;border:1px solid rgba(255,255,255,.08);border-radius:24px;background:linear-gradient(145deg,var(--vp-card),var(--vp-elevated));color:white;text-align:left;padding:20px;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between}.gallery-card .num{color:var(--vp-primary);font-size:20px;font-weight:950}.gallery-card h3{margin:32px 0 8px;font-size:23px;line-height:1.05}.gallery-card p{margin:0;font-size:17px;line-height:1.2;color:var(--vp-muted)}.contact{margin-top:40px;padding:34px;border-radius:32px;background:linear-gradient(145deg,var(--vp-card),var(--vp-elevated));border:1px solid rgba(255,255,255,.08)}.qr{width:330px;height:330px;margin:30px auto;border-radius:22px;background:linear-gradient(90deg,#111 10px,transparent 10px) 0 0/34px 34px,linear-gradient(#111 10px,transparent 10px) 0 0/34px 34px,white;border:18px solid #fff;outline:5px solid var(--vp-primary)}.modal{position:absolute;inset:0;z-index:20;display:none;padding:46px;background:rgba(0,0,0,.88);backdrop-filter:blur(10px)}.modal.active{display:flex;flex-direction:column}.modal-box{margin:auto 0;overflow:hidden;border-radius:32px;background:var(--vp-card);border:1px solid rgba(255,255,255,.1)}.modal-box img{width:100%;height:980px;object-fit:cover;background:#111;display:block}.modal-text{padding:30px}.modal-text h3{margin:0 0 10px;font-size:36px}.modal-text p{margin:0;font-size:22px;color:var(--vp-muted);line-height:1.3}.idle{position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#777;font-size:17px;z-index:5}
-</style></head><body><main class="stage" id="stage">
-<section class="screen active" id="home"><div class="home-bg"></div><div class="brand"><div class="logo">Vertical<strong>Parts</strong></div><div class="site">www.verticalparts.com.br</div></div><div class="gold-line"></div><div class="hero-copy"><div class="kicker">TOTEM INTERATIVO 42”</div><h1>Movemos pessoas com segurança.</h1><p class="lead">Elevadores, escadas rolantes, esteiras rolantes, modernizações e soluções técnicas para grandes projetos.</p><button class="primary" onclick="go('menu')">TOQUE PARA COMEÇAR</button></div><div class="idle">Retorno automático após 180 segundos sem interação.</div></section>
-<section class="screen" id="menu"><div class="brand"><div class="logo">Vertical<strong>Parts</strong></div><div class="site">Totem 9:16</div></div><h1 class="title">Escolha uma solução.</h1><p class="subtitle">Navegação otimizada para totem touch vertical de 42 polegadas.</p><div class="menu-list"><button class="tile" onclick="go('produtos')"><div class="icon">↕</div><div><h2>Produtos</h2><p>Elevadores, escadas rolantes e esteiras rolantes.</p></div></button><button class="tile" onclick="go('obras')"><div class="icon">◆</div><div><h2>Obras Entregues</h2><p>Estrutura com 55 clientes para subir fotos depois.</p></div></button><button class="tile" onclick="go('diferenciais')"><div class="icon">✓</div><div><h2>Diferenciais</h2><p>Engenharia, gestão, segurança e atendimento nacional.</p></div></button><button class="tile" onclick="go('contato')"><div class="icon">☎</div><div><h2>Contato</h2><p>QR Code, site e chamada para proposta comercial.</p></div></button></div><div class="bottom-nav"><button class="navbtn" onclick="go('home')">INÍCIO</button><button class="navbtn gold" onclick="go('obras')">VER OBRAS</button></div></section>
-<section class="screen" id="produtos"><div class="brand"><div class="logo">Vertical<strong>Parts</strong></div><div class="site">Produtos</div></div><h1 class="title">Transporte vertical completo.</h1><p class="subtitle">Soluções para empreendimentos comerciais, corporativos, hospitalares, aeroportuários e de alto fluxo.</p><div class="photo"><img src="assets/demo_escada_full.jpg"><div class="photo-copy"><h3>Escadas Rolantes</h3><p>Equipamentos com acabamento premium, segurança operacional e presença visual forte.</p></div></div><div class="chips"><div class="chip">Elevadores</div><div class="chip">Escadas Rolantes</div><div class="chip">Esteiras Rolantes</div><div class="chip">Modernizações</div></div><div class="bottom-nav"><button class="navbtn" onclick="go('menu')">VOLTAR</button><button class="navbtn gold" onclick="go('obras')">OBRAS</button></div></section>
-<section class="screen" id="obras"><div class="brand"><div class="logo">Vertical<strong>Parts</strong></div><div class="site">55 pastas prontas</div></div><h1 class="title">Obras Entregues.</h1><p class="subtitle">Os 55 clientes genéricos aparecem aqui. Depois substitua nomes e fotos nas pastas.</p><div class="gallery-grid" id="gallery"></div><div class="bottom-nav"><button class="navbtn" onclick="go('menu')">MENU</button><button class="navbtn gold" onclick="go('contato')">CONTATO</button></div></section>
-<section class="screen" id="diferenciais"><div class="brand"><div class="logo">Vertical<strong>Parts</strong></div><div class="site">Diferenciais</div></div><h1 class="title">Por que escolher a VerticalParts?</h1><p class="subtitle">Posicionamento para feira: impacto visual, confiança técnica e leitura rápida.</p><div class="menu-list"><div class="tile"><div class="icon">🏗</div><div><h2>Engenharia especializada</h2><p>Gestão técnica para implantação, modernização e suporte.</p></div></div><div class="tile"><div class="icon">⚙</div><div><h2>Soluções sob medida</h2><p>Projetos alinhados ao fluxo, arquitetura e necessidade.</p></div></div><div class="tile"><div class="icon">🛡</div><div><h2>Segurança operacional</h2><p>Foco em confiabilidade, acabamento e experiência do usuário.</p></div></div><div class="tile"><div class="icon">📍</div><div><h2>Atendimento nacional</h2><p>Estrutura preparada para grandes clientes.</p></div></div></div><div class="bottom-nav"><button class="navbtn" onclick="go('menu')">VOLTAR</button><button class="navbtn gold" onclick="go('contato')">CONTATO</button></div></section>
-<section class="screen" id="contato"><div class="brand"><div class="logo">Vertical<strong>Parts</strong></div><div class="site">Contato</div></div><h1 class="title">Vamos conversar sobre seu projeto?</h1><p class="subtitle">Substitua o QR demonstrativo pelo QR oficial do WhatsApp, site ou formulário comercial.</p><div class="contact"><div class="qr"></div><h1 style="font-size:34px;text-align:center;margin:0;color:var(--vp-primary)">www.verticalparts.com.br</h1><p style="font-size:22px;text-align:center;color:var(--vp-muted);line-height:1.3">Solicite uma visita técnica, uma proposta comercial ou conheça nossas soluções.</p></div><div class="bottom-nav"><button class="navbtn" onclick="go('menu')">MENU</button><button class="navbtn gold" onclick="go('home')">INÍCIO</button></div></section>
-<div class="modal" id="modal" onclick="closeModal()"><div class="modal-box"><img id="modalImg" src="assets/demo_escada_full.jpg"><div class="modal-text"><h3 id="modalTitle">Cliente</h3><p id="modalText">Descrição da obra.</p></div></div></div>
-</main><script>
-const TIMEOUT=180000;let idleTimer;function resetIdle(){clearTimeout(idleTimer);idleTimer=setTimeout(()=>go('home'),TIMEOUT)}function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');closeModal(false);resetIdle()}function openCliente(item){document.getElementById('modalImg').src=item.capa;document.getElementById('modalImg').onerror=function(){this.src='assets/demo_escada_full.jpg'};document.getElementById('modalTitle').textContent=item.cliente;document.getElementById('modalText').textContent=`${item.cidade} • ${item.categoria} • ${item.escopo}`;document.getElementById('modal').classList.add('active');resetIdle()}function closeModal(reset=true){document.getElementById('modal').classList.remove('active');if(reset)resetIdle()}async function carregarClientes(){let clientes=[];try{clientes=await(await fetch('config/clientes.json')).json()}catch(e){clientes=Array.from({length:55}).map((_,i)=>({cliente:`Cliente ${String(i+1).padStart(2,'0')}`,cidade:'Cidade / UF',categoria:'Categoria',escopo:'Escopo da obra',capa:'assets/demo_escada_full.jpg'}))}const gallery=document.getElementById('gallery');gallery.innerHTML='';clientes.slice(0,55).forEach((item,idx)=>{const b=document.createElement('button');b.className='gallery-card';b.onclick=()=>openCliente(item);b.innerHTML=`<div class="num">${String(idx+1).padStart(2,'0')}</div><div><h3>${item.cliente}</h3><p>${item.cidade}<br>${item.categoria}</p></div>`;gallery.appendChild(b)})}['click','touchstart','mousemove','keydown'].forEach(evt=>document.addEventListener(evt,resetIdle,{passive:true}));carregarClientes();resetIdle();
-</script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>VerticalParts — Portfólio</title>
+  <style>
+    /* ─────────────────────────────────────────────────
+       DESIGN TOKENS
+       Palette: near-black / industrial neutral
+       ground:    #070707
+       text:      #F0EDE8
+       accent:    #F5C400  (VP gold)
+       muted:     #C8C4BC
+       ───────────────────────────────────────────────── */
+    :root {
+      --ground:  #070707;
+      --text:    #F0EDE8;
+      --accent:  #F5C400;
+      --muted:   #C8C4BC;
+
+      /* Derived */
+      --accent-dim:  rgba(245, 196, 0, 0.12);
+      --accent-ring: rgba(245, 196, 0, 0.30);
+      --white-55:    rgba(240, 237, 232, 0.55);
+      --white-30:    rgba(240, 237, 232, 0.30);
+      --white-10:    rgba(240, 237, 232, 0.10);
+      --black-90:    rgba(7, 7, 7, 0.90);
+      --black-45:    rgba(7, 7, 7, 0.45);
+      --black-10:    rgba(7, 7, 7, 0.10);
+      --black-30:    rgba(7, 7, 7, 0.30);
+    }
+
+    /* ─────────────────────────────────────────────────
+       RESET & BASE
+       ───────────────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      margin: 0; padding: 0;
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: #000;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--text);
+      touch-action: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ─────────────────────────────────────────────────
+       STAGE — 9:16 totem viewport centered on screen
+       ───────────────────────────────────────────────── */
+    #stage {
+      width:  min(100vw, calc(100vh * 9 / 16));
+      height: min(100vh, calc(100vw * 16 / 9));
+      aspect-ratio: 9 / 16;
+      background: var(--ground);
+      position: relative;
+      overflow: hidden;
+      touch-action: none;
+      /* Subtle outer glow so it floats on dark desktops */
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.05),
+        0 0 80px rgba(0,0,0,0.8);
+    }
+
+    /* ─────────────────────────────────────────────────
+       HOME SCREEN
+       ───────────────────────────────────────────────── */
+    #home {
+      position: absolute;
+      inset: 0;
+      background: var(--ground);
+      display: flex;
+      flex-direction: column;
+      z-index: 20;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      will-change: opacity, transform;
+    }
+
+    #home.exiting {
+      opacity: 0;
+      transform: scale(1.04);
+      pointer-events: none;
+    }
+
+    #home.hidden {
+      display: none;
+    }
+
+    /* Technical drawing paper grid — subtle, earned by subject matter */
+    #home::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(245,196,0,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245,196,0,0.018) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Radial gold bloom behind logo area */
+    #home::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 45%, rgba(245,196,0,0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .home-inner {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 48px;
+      gap: 0;
+    }
+
+    /* Ghost number — largest typographic element, purely atmospheric */
+    .home-ghost {
+      position: absolute;
+      bottom: 108px;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 148px;
+      font-weight: 900;
+      letter-spacing: -8px;
+      color: var(--text);
+      opacity: 0.04;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+      z-index: 0;
+      /* Condensed feel — squish with transform */
+      transform: scaleX(0.82);
+    }
+
+    .home-logo {
+      font-size: 52px;
+      font-weight: 400;
+      letter-spacing: -1.5px;
+      color: var(--text);
+      line-height: 1;
+      text-align: center;
+    }
+
+    .home-logo strong {
+      font-weight: 900;
+    }
+
+    .home-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      margin: 28px auto 32px;
+    }
+
+    .home-tagline {
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--white-55);
+      line-height: 1.45;
+      text-align: center;
+      max-width: 340px;
+    }
+
+    /* CTA section anchored to bottom */
+    .home-cta {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .home-cta-btn {
+      width: 100%;
+      height: 88px;
+      background: var(--accent);
+      color: var(--ground);
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      /* No transition — hard mechanical press */
+      transition: background 0.1s;
+    }
+
+    .home-cta-btn:active {
+      background: #ddb000;
+    }
+
+    .home-hint {
+      font-size: 13px;
+      color: var(--white-30);
+      margin-top: 18px;
+      margin-bottom: 32px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ─────────────────────────────────────────────────
+       FEED — slide container
+       ───────────────────────────────────────────────── */
+    #feed {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      overflow: hidden;
+      /* Starts hidden; revealed when home exits */
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease 0.2s;
+    }
+
+    #feed.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* The slides container — fills stage, all slides positioned inside */
+    #slides-container {
+      position: absolute;
+      inset: 0;
+      /* No overflow clip here — slides translate outside bounds during drag */
+    }
+
+    /* ─────────────────────────────────────────────────
+       INDIVIDUAL SLIDE
+       ───────────────────────────────────────────────── */
+    .slide {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #0a0a0a;
+      will-change: transform;
+    }
+
+    /* Photo layer */
+    .slide-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      /* Ken Burns: only activated on .active slide via .kb class */
+      transform-origin: center center;
+    }
+
+    .slide.active .slide-img {
+      animation: kenburns 9s ease-in-out forwards;
+    }
+
+    @keyframes kenburns {
+      from { transform: scale(1.0); }
+      to   { transform: scale(1.07); }
+    }
+
+    /* Gradient overlay — heavier at bottom for text legibility, subtle at top */
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(7,7,7,0.90)  0%,
+        rgba(7,7,7,0.45) 40%,
+        rgba(7,7,7,0.10) 65%,
+        rgba(7,7,7,0.30) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* Fallback when image 404s */
+    .slide-placeholder {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide-placeholder.shown {
+      display: flex;
+    }
+
+    .slide-placeholder-mark {
+      font-size: 96px;
+      font-weight: 900;
+      letter-spacing: -4px;
+      color: var(--accent);
+      opacity: 0.15;
+      line-height: 1;
+    }
+
+    /* ─── Top bar ─── */
+    .slide-topbar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      padding: 44px 24px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      z-index: 5;
+    }
+
+    .slide-logo {
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      color: rgba(240,237,232,0.7);
+      line-height: 1;
+    }
+
+    .slide-logo strong {
+      font-weight: 900;
+    }
+
+    /* Slide counter — monospaced to feel like an engineering readout */
+    .slide-counter {
+      font-family: 'Courier New', 'Courier', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: rgba(240,237,232,0.4);
+      line-height: 1;
+    }
+
+    /* ─── Right-edge progress bar ─── */
+    .slide-progress-track {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      width: 3px;
+      bottom: 80px;
+      background: rgba(240,237,232,0.08);
+      z-index: 5;
+    }
+
+    .slide-progress-fill {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      background: var(--accent);
+      border-radius: 0 0 2px 2px;
+      transition: height 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    /* ─── Photo dots (which of 5 images within this client) ─── */
+    .slide-dots {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      z-index: 5;
+    }
+
+    .slide-dot {
+      width: 3px;
+      border-radius: 2px;
+      background: rgba(240,237,232,0.25);
+      transition: height 0.3s ease, background 0.3s ease;
+    }
+
+    .slide-dot.active {
+      height: 16px !important;
+      background: var(--accent);
+    }
+
+    /* ─── Bottom content ─── */
+    .slide-bottom {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 0 32px 44px;
+      z-index: 5;
+    }
+
+    .slide-category {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-ring);
+      border-radius: 20px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      /* Text reveal: starts offset, animated to position */
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    .slide-client {
+      font-size: 56px;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.9;
+      letter-spacing: -2.5px;
+      color: var(--text);
+      margin-bottom: 12px;
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    .slide-city {
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--white-55);
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    /* Text reveal animation classes applied by JS */
+    .reveal-in {
+      animation: revealText 420ms ease-out forwards;
+    }
+
+    @keyframes revealText {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ─────────────────────────────────────────────────
+       CONTACT FAB
+       ───────────────────────────────────────────────── */
+    #fab {
+      position: absolute;
+      right: 32px;
+      bottom: 32px;
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: none;
+      cursor: pointer;
+      z-index: 30;
+      display: none;  /* shown only during feed */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      animation: fabPulse 2.5s ease-in-out infinite;
+    }
+
+    #fab.visible {
+      display: flex;
+    }
+
+    @keyframes fabPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(245,196,0,0.6); }
+      50%       { box-shadow: 0 0 0 16px rgba(245,196,0,0); }
+    }
+
+    #fab svg {
+      width: 26px;
+      height: 26px;
+      display: block;
+    }
+
+    .fab-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ground);
+      line-height: 1;
+    }
+
+    /* ─────────────────────────────────────────────────
+       CONTACT OVERLAY
+       ───────────────────────────────────────────────── */
+    #contact-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 40;
+      background: rgba(7,7,7,0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 48px 40px;
+      /* Slide up from bottom */
+      transform: translateY(100%);
+      transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #contact-overlay.open {
+      transform: translateY(0);
+    }
+
+    .contact-logo {
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: -1px;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .contact-logo strong {
+      font-weight: 900;
+    }
+
+    .contact-tagline {
+      font-size: 16px;
+      color: var(--muted);
+      font-weight: 400;
+      margin-bottom: 28px;
+    }
+
+    .contact-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      margin-bottom: 40px;
+    }
+
+    .contact-qr {
+      width: 220px;
+      height: 220px;
+      background: #fff;
+      border: 3px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    .contact-qr-label {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #888;
+      text-transform: uppercase;
+    }
+
+    .contact-url {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.3px;
+      margin-bottom: 40px;
+    }
+
+    .contact-back {
+      background: transparent;
+      border: 1px solid rgba(240,237,232,0.20);
+      padding: 16px 48px;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+
+    .contact-back:active {
+      border-color: rgba(240,237,232,0.5);
+    }
+
+    /* ─────────────────────────────────────────────────
+       REDUCED MOTION
+       ───────────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .slide.active .slide-img { animation: none; }
+      @keyframes revealText { to { opacity: 1; transform: none; } }
+      @keyframes fabPulse { 0%, 100% { box-shadow: none; } }
+    }
+  </style>
+</head>
+<body>
+
+<div id="stage">
+
+  <!-- ═══════════════════════════════════════════
+       HOME SCREEN
+  ════════════════════════════════════════════ -->
+  <div id="home">
+
+    <div class="home-inner">
+      <!-- Logo -->
+      <div class="home-logo">Vertical<strong>Parts</strong></div>
+
+      <!-- Gold rule — weight, not decoration -->
+      <div class="home-divider"></div>
+
+      <!-- Tagline: plain, specific, from the subject -->
+      <p class="home-tagline">
+        Transporte vertical para os maiores empreendimentos do Brasil.
+      </p>
+    </div>
+
+    <!-- Ghost "55" — the portfolio count as ambient typography -->
+    <div class="home-ghost" aria-hidden="true">55</div>
+
+    <!-- CTA anchored to floor -->
+    <div class="home-cta">
+      <button class="home-cta-btn" id="home-btn">EXPLORAR OBRAS</button>
+      <p class="home-hint">↑ Arraste para navegar</p>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       FEED — slides injected here by JS
+  ════════════════════════════════════════════ -->
+  <div id="feed">
+    <div id="slides-container"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT FAB
+  ════════════════════════════════════════════ -->
+  <button id="fab" aria-label="Abrir contato">
+    <!-- Envelope SVG -->
+    <svg viewBox="0 0 24 24" fill="none" stroke="#070707" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="1" />
+      <polyline points="2,4 12,13 22,4" />
+    </svg>
+    <span class="fab-label">Contato</span>
+  </button>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT OVERLAY
+  ════════════════════════════════════════════ -->
+  <div id="contact-overlay" role="dialog" aria-label="Contato VerticalParts" aria-hidden="true">
+    <div class="contact-logo">Vertical<strong>Parts</strong></div>
+    <div class="contact-tagline">Soluções em transporte vertical</div>
+    <div class="contact-divider"></div>
+    <div class="contact-qr" aria-label="QR Code">
+      <span class="contact-qr-label">QR CODE</span>
+    </div>
+    <div class="contact-url">verticalparts.com.br</div>
+    <button class="contact-back" id="contact-back-btn">← VOLTAR</button>
+  </div>
+
+</div><!-- /#stage -->
+
+<script>
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     CONSTANTS & STATE
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  const IDLE_MS       = 180_000;  // 3 minutes
+  const SNAP_THRESH   = 0.18;     // 18% of stage height triggers slide change
+  const SPRING        = 'cubic-bezier(0.16, 1, 0.3, 1)';
+  const SPRING_DUR    = '480ms';
+  const RUBBER_FACTOR = 0.15;     // resistance at first/last slide
+
+  let slides       = [];          // flat array of {src, cliente, cidade, categoria, photoIndex, slideIndex}
+  let currentIndex = 0;
+  let slideEls     = [];          // DOM elements, one per slide
+
+  let touchStartY  = 0;
+  let touchCurY    = 0;
+  let isDragging   = false;
+  let isAnimating  = false;
+
+  let idleTimer    = null;
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     DOM REFS
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  const $stage      = document.getElementById('stage');
+  const $home       = document.getElementById('home');
+  const $homeBtn    = document.getElementById('home-btn');
+  const $feed       = document.getElementById('feed');
+  const $container  = document.getElementById('slides-container');
+  const $fab        = document.getElementById('fab');
+  const $overlay    = document.getElementById('contact-overlay');
+  const $backBtn    = document.getElementById('contact-back-btn');
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     IDLE TIMER
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  function resetIdle() {
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(returnHome, IDLE_MS);
+  }
+
+  function returnHome() {
+    // Close overlay, reset to first slide, show home
+    closeContact();
+    if (currentIndex !== 0) {
+      currentIndex = 0;
+      positionSlides(false);  // instant, no animation
+    }
+    showHome();
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     HOME ↔ FEED TRANSITIONS
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  function enterFeed() {
+    resetIdle();
+    $home.classList.add('exiting');
+    $feed.classList.add('visible');
+    $fab.classList.add('visible');
+    // After transition completes, fully hide home
+    setTimeout(() => {
+      $home.classList.add('hidden');
+      $home.classList.remove('exiting');
+    }, 520);
+  }
+
+  function showHome() {
+    $home.classList.remove('hidden', 'exiting');
+    $feed.classList.remove('visible');
+    $fab.classList.remove('visible');
+    clearTimeout(idleTimer);
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     BUILD SLIDES FROM DATA
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  function buildSlidesFromClientes(clientes) {
+    // Flatten: 11 clients × 5 photos = 55 slides
+    slides = [];
+    clientes.forEach(c => {
+      c.imagens.forEach((src, photoIdx) => {
+        slides.push({
+          src,
+          cliente:    c.cliente,
+          cidade:     c.cidade,
+          categoria:  c.categoria,
+          photoIndex: photoIdx,      // 0–4 within client
+          totalPhotos: c.imagens.length,
+        });
+      });
+    });
+
+    // Create DOM elements
+    $container.innerHTML = '';
+    slideEls = [];
+
+    slides.forEach((data, idx) => {
+      const el = createSlideEl(data, idx);
+      $container.appendChild(el);
+      slideEls.push(el);
+    });
+
+    // Set initial positions without animation
+    positionSlides(false);
+    updateUI(0, false);
+  }
+
+  function createSlideEl(data, idx) {
+    const el = document.createElement('div');
+    el.className = 'slide';
+    el.dataset.index = idx;
+
+    /* Photo */
+    const img = document.createElement('img');
+    img.className = 'slide-img';
+    img.alt = `${data.cliente} — foto ${data.photoIndex + 1}`;
+    img.src = data.src;
+
+    // Error → show placeholder, hide img
+    const placeholder = document.createElement('div');
+    placeholder.className = 'slide-placeholder';
+    placeholder.innerHTML = `<span class="slide-placeholder-mark">VP</span>`;
+    img.addEventListener('error', () => {
+      img.style.display = 'none';
+      placeholder.classList.add('shown');
+    });
+
+    /* Gradient overlay */
+    const overlay = document.createElement('div');
+    overlay.className = 'slide-overlay';
+
+    /* Top bar */
+    const topbar = document.createElement('div');
+    topbar.className = 'slide-topbar';
+    // Pad counter: "01 / 55"
+    const counterStr = `${String(idx + 1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
+    topbar.innerHTML = `
+      <div class="slide-logo">Vertical<strong>Parts</strong></div>
+      <div class="slide-counter">${counterStr}</div>
+    `;
+
+    /* Right progress track */
+    const progressTrack = document.createElement('div');
+    progressTrack.className = 'slide-progress-track';
+    const progressFill = document.createElement('div');
+    progressFill.className = 'slide-progress-fill';
+    progressTrack.appendChild(progressFill);
+
+    /* Photo dots (which of 5 photos in this client) */
+    const dotsEl = document.createElement('div');
+    dotsEl.className = 'slide-dots';
+    for (let d = 0; d < data.totalPhotos; d++) {
+      const dot = document.createElement('div');
+      dot.className = 'slide-dot';
+      // height varies: inactive 6px, active set by .active class
+      dot.style.height = '6px';
+      if (d === data.photoIndex) dot.classList.add('active');
+      dotsEl.appendChild(dot);
+    }
+
+    /* Bottom content */
+    const bottom = document.createElement('div');
+    bottom.className = 'slide-bottom';
+
+    const categoryEl = document.createElement('div');
+    categoryEl.className = 'slide-category';
+    categoryEl.textContent = data.categoria;
+
+    const clientEl = document.createElement('div');
+    clientEl.className = 'slide-client';
+    clientEl.textContent = data.cliente;
+
+    const cityEl = document.createElement('div');
+    cityEl.className = 'slide-city';
+    cityEl.textContent = data.cidade;
+
+    bottom.appendChild(categoryEl);
+    bottom.appendChild(clientEl);
+    bottom.appendChild(cityEl);
+
+    /* Assemble */
+    el.appendChild(img);
+    el.appendChild(placeholder);
+    el.appendChild(overlay);
+    el.appendChild(topbar);
+    el.appendChild(progressTrack);
+    el.appendChild(dotsEl);
+    el.appendChild(bottom);
+
+    return el;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     POSITION ALL SLIDES
+     Called during drag (offset = dragDelta) and on settle
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  function positionSlides(animate, dragOffset = 0) {
+    const stageH = $stage.offsetHeight;
+
+    slideEls.forEach((el, i) => {
+      // Base position relative to current: each step is 100% stage height
+      const baseY = (i - currentIndex) * stageH + dragOffset;
+
+      if (animate) {
+        el.style.transition = `transform ${SPRING_DUR} ${SPRING}`;
+      } else {
+        el.style.transition = 'none';
+      }
+
+      el.style.transform = `translateY(${baseY}px)`;
+    });
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     SET SLIDE — update active state and all UI
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  function setSlide(idx, animate) {
+    if (idx < 0 || idx >= slides.length) return;
+
+    const prev = currentIndex;
+    currentIndex = idx;
+
+    // Remove active from old slide, add to new
+    if (slideEls[prev]) {
+      slideEls[prev].classList.remove('active');
+      // Reset Ken Burns by removing and re-adding (force reflow on next activation)
+      const prevImg = slideEls[prev].querySelector('.slide-img');
+      if (prevImg) {
+        prevImg.style.animation = 'none';
+      }
+    }
+
+    slideEls[idx].classList.add('active');
+
+    // Re-trigger Ken Burns on new active slide
+    const activeImg = slideEls[idx].querySelector('.slide-img');
+    if (activeImg) {
+      // Force reflow to restart animation
+      void activeImg.offsetWidth;
+      activeImg.style.animation = '';
+    }
+
+    positionSlides(animate);
+    updateUI(idx, animate);
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     UPDATE UI ELEMENTS
+     Progress bar + text reveal animation
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  function updateUI(idx, animate) {
+    const total = slides.length;
+    const pct   = total > 1 ? (idx / (total - 1)) * 100 : 0;
+
+    // Update progress bar on the ACTIVE slide
+    const activeEl = slideEls[idx];
+    if (!activeEl) return;
+
+    const fill = activeEl.querySelector('.slide-progress-fill');
+    if (fill) fill.style.height = `${pct}%`;
+
+    // Text reveal animation on the new active slide
+    if (animate) {
+      triggerTextReveal(activeEl);
+    } else {
+      // No animation — just show text immediately
+      const els = activeEl.querySelectorAll('.slide-category, .slide-client, .slide-city');
+      els.forEach(e => {
+        e.style.opacity = '1';
+        e.style.transform = 'none';
+      });
+    }
+  }
+
+  function triggerTextReveal(slideEl) {
+    const items = [
+      slideEl.querySelector('.slide-category'),
+      slideEl.querySelector('.slide-client'),
+      slideEl.querySelector('.slide-city'),
+    ];
+
+    items.forEach((el, i) => {
+      if (!el) return;
+      // Reset
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.animation = 'none';
+      el.classList.remove('reveal-in');
+
+      // Stagger 60ms apart
+      setTimeout(() => {
+        el.style.animation = '';
+        el.classList.add('reveal-in');
+        // Clean up after animation completes so it persists
+        setTimeout(() => {
+          el.style.opacity  = '1';
+          el.style.transform = 'none';
+        }, 440);
+      }, i * 60);
+    });
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     TOUCH HANDLERS — TikTok-style drag
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  function onTouchStart(e) {
+    if (isAnimating) return;
+    resetIdle();
+
+    // Only activate in feed
+    if (!$feed.classList.contains('visible')) return;
+    // Don't intercept FAB / overlay touches
+    if ($overlay.classList.contains('open')) return;
+    if (e.target.closest('#fab') || e.target.closest('#contact-overlay')) return;
+
+    isDragging   = true;
+    touchStartY  = e.touches[0].clientY;
+    touchCurY    = touchStartY;
+
+    // Remove transitions during drag — finger must follow with zero lag
+    slideEls.forEach(el => { el.style.transition = 'none'; });
+  }
+
+  function onTouchMove(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    resetIdle();
+
+    touchCurY = e.touches[0].clientY;
+    let delta = touchCurY - touchStartY;
+
+    const stageH = $stage.offsetHeight;
+    const atFirst = currentIndex === 0;
+    const atLast  = currentIndex === slides.length - 1;
+
+    // Rubber band at boundaries
+    if ((delta > 0 && atFirst) || (delta < 0 && atLast)) {
+      delta *= RUBBER_FACTOR;
+    }
+
+    // Shift all slides by delta — no transition, instant
+    positionSlides(false, delta);
+  }
+
+  function onTouchEnd(e) {
+    if (!isDragging) return;
+    isDragging = false;
+    resetIdle();
+
+    const stageH = $stage.offsetHeight;
+    const delta  = touchCurY - touchStartY;
+    const absDelta = Math.abs(delta);
+
+    const atFirst = currentIndex === 0;
+    const atLast  = currentIndex === slides.length - 1;
+    const threshold = stageH * SNAP_THRESH;
+
+    isAnimating = true;
+
+    if (absDelta > threshold) {
+      if (delta < 0 && !atLast) {
+        // Swipe up → next slide
+        setSlide(currentIndex + 1, true);
+      } else if (delta > 0 && !atFirst) {
+        // Swipe down → previous slide
+        setSlide(currentIndex - 1, true);
+      } else {
+        // At boundary — snap back
+        positionSlides(true, 0);
+      }
+    } else {
+      // Below threshold — snap back to current
+      positionSlides(true, 0);
+    }
+
+    // Re-enable interactions after spring completes
+    setTimeout(() => { isAnimating = false; }, 520);
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     CONTACT OVERLAY
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  function openContact() {
+    $overlay.classList.add('open');
+    $overlay.setAttribute('aria-hidden', 'false');
+    resetIdle();
+  }
+
+  function closeContact() {
+    $overlay.classList.remove('open');
+    $overlay.setAttribute('aria-hidden', 'true');
+    resetIdle();
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     EVENT WIRING
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  $homeBtn.addEventListener('click', enterFeed);
+
+  $fab.addEventListener('click', openContact);
+  $backBtn.addEventListener('click', closeContact);
+
+  $stage.addEventListener('touchstart', onTouchStart, { passive: true });
+  $stage.addEventListener('touchmove',  onTouchMove,  { passive: false });
+  $stage.addEventListener('touchend',   onTouchEnd,   { passive: true });
+
+  // Idle timer resets on any touch anywhere
+  document.addEventListener('touchstart', resetIdle, { passive: true });
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     INIT — load clientes.json and boot
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  async function init() {
+    let clientes = [];
+
+    try {
+      const res = await fetch('config/clientes.json');
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      clientes = await res.json();
+    } catch (err) {
+      console.warn('clientes.json não carregado:', err);
+      // Fallback: 11 placeholder clients × 5 photos
+      clientes = Array.from({ length: 11 }, (_, ci) => ({
+        id: `cliente_${ci + 1}`,
+        cliente: `Cliente ${String(ci + 1).padStart(2,'0')}`,
+        cidade: 'São Paulo, SP',
+        categoria: 'Escadas Rolantes',
+        imagens: Array.from({ length: 5 }, (_, pi) => ''),
+      }));
+    }
+
+    buildSlidesFromClientes(clientes);
+
+    // Start idle timer only on home (feed isn't visible yet)
+    // Timer is reset on first touch → enterFeed
+  }
+
+  init();
+</script>
+</body>
+</html>
