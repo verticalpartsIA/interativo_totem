@@ -659,15 +659,16 @@
     }
 
     .slide-client {
-      font-size: 56px;
-      font-weight: 900;
+      font-size: clamp(26px, 7.5vw, 38px);
+      font-weight: 700;
       text-transform: uppercase;
-      line-height: 0.9;
-      letter-spacing: -2.5px;
+      line-height: 1.05;
+      letter-spacing: 0.5px;
       color: var(--text);
       margin-bottom: 12px;
       opacity: 0;
       transform: translateY(24px);
+      word-break: break-word;
     }
 
     .slide-city {
