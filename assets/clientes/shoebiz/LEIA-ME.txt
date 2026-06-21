@@ -1,0 +1,3 @@
+Coloque aqui 5 fotos nomeadas: 001.jpg, 002.jpg, 003.jpg, 004.jpg, 005.jpg
+Resolução recomendada: 1080×1920 pixels (formato vertical 9:16)
+Formato: JPG ou WEBP
