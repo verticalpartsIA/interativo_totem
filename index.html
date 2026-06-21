@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VerticalParts — Totem Interativo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
 <style>
 /* ─── RESET & BASE ─────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -89,53 +91,78 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
 .muted {color:var(--muted)}
 
 /* ═══════════════════════════════════════════════════════════ */
-/*  SCREEN 1 — ATTRACT                                        */
+/*  SCREEN 1 — ATTRACT (Canva layout)                        */
 /* ═══════════════════════════════════════════════════════════ */
-#s-attract{background:#000}
-.attract-hero{
-  position:absolute;inset:0;
-  background:url('assets/clientes/aeroporto_brasilia/001.jpg') center/cover no-repeat;
+#s-attract{background:#0a0a0a;flex-direction:column}
+
+/* Hero top ~38% */
+.attract-hero-wrap{
+  position:relative;
+  flex:0 0 38%;
+  overflow:hidden;
+}
+.attract-hero-wrap img{
+  width:100%;height:100%;object-fit:cover;display:block;
   animation:kenBurns 18s ease-in-out infinite alternate;
 }
 @keyframes kenBurns{
   0%  {transform:scale(1)   translate(0,0)}
-  100%{transform:scale(1.1) translate(-2%,-1%)}
+  100%{transform:scale(1.08) translate(-1.5%,-.5%)}
 }
-.attract-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,.5) 0%,rgba(0,0,0,.25) 40%,rgba(0,0,0,.82) 100%);
+/* curved dark overlay at bottom of hero */
+.attract-hero-wrap::after{
+  content:'';position:absolute;left:0;right:0;bottom:-2px;
+  height:38%;
+  background:#0a0a0a;
+  border-radius:55% 55% 0 0 / 100% 100% 0 0;
 }
-.attract-content{
-  position:absolute;inset:0;
+/* logo inside hero */
+.attract-logo-wrap{
+  position:absolute;top:clamp(16px,3%,32px);left:clamp(16px,3%,32px);
+  z-index:5;
+  display:flex;align-items:center;gap:10px;
+}
+.attract-logo-wrap img{height:clamp(44px,7%,72px);width:auto}
+
+/* Nav rows bottom ~62% */
+.attract-nav{
+  flex:1;
   display:flex;flex-direction:column;
-  justify-content:flex-end;
-  padding:clamp(28px,5%,60px);
-  padding-bottom:clamp(50px,9%,110px);
+  gap:clamp(10px,1.8%,18px);
+  padding:clamp(8px,1.5%,16px) clamp(16px,3%,28px) clamp(16px,3%,28px);
+  justify-content:center;
 }
-.attract-logo{
-  position:absolute;top:clamp(24px,4%,48px);left:clamp(24px,4%,48px);
-  height:clamp(40px,5.5%,60px);width:auto;
-}
-.attract-eyebrow{
-  font-size:clamp(11px,1.6%,18px);letter-spacing:.18em;text-transform:uppercase;
-  color:var(--gold);font-weight:700;margin-bottom:10px;
-}
-.attract-title{margin-bottom:14px}
-.attract-sub{color:var(--muted);margin-bottom:clamp(28px,5%,50px);max-width:85%}
-.attract-cta{
-  align-self:flex-start;
-  background:var(--gold);color:#000;
-  height:clamp(72px,9%,90px);
-  padding:0 clamp(32px,5%,56px);
-  border:none;border-radius:var(--r);
-  font-size:clamp(17px,2.6%,28px);font-weight:900;letter-spacing:.06em;text-transform:uppercase;
+.attract-row{
+  display:flex;align-items:center;gap:clamp(10px,1.8%,18px);
   cursor:pointer;
-  box-shadow:0 0 40px rgba(245,196,0,.35);
-  animation:pulse 2.5s ease-in-out infinite;
-  display:flex;align-items:center;gap:12px;
+  transition:transform .15s;
+  flex:1;max-height:clamp(90px,15%,140px);
 }
-@keyframes pulse{0%,100%{box-shadow:0 0 30px rgba(245,196,0,.3)}50%{box-shadow:0 0 55px rgba(245,196,0,.7)}}
-.attract-cta:active{transform:scale(.96)}
+.attract-row:active{transform:scale(.97)}
+.attract-row-img{
+  flex:0 0 clamp(90px,28%,170px);
+  height:100%;
+  border-radius:clamp(14px,2.5%,24px);
+  overflow:hidden;
+  flex-shrink:0;
+}
+.attract-row-img img{width:100%;height:100%;object-fit:cover;display:block}
+.attract-row-pill{
+  flex:1;height:100%;
+  background:var(--gold);
+  border-radius:clamp(14px,2.5%,40px);
+  display:flex;align-items:center;justify-content:center;
+  padding:0 clamp(14px,2.5%,28px);
+}
+.attract-row-pill span{
+  font-family:'Playfair Display',Georgia,serif;
+  font-style:italic;
+  font-weight:700;
+  font-size:clamp(22px,4%,44px);
+  color:#000;
+  text-align:center;
+  line-height:1.15;
+}
 
 /* ═══════════════════════════════════════════════════════════ */
 /*  SCREEN 2 — MENU                                           */
@@ -397,16 +424,54 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
      SCREEN 1 — ATTRACT LOOP
 ══════════════════════════════════════════════ -->
 <section id="s-attract" class="screen active" aria-label="Tela inicial">
-  <div class="attract-hero"></div>
-  <div class="attract-overlay"></div>
-  <img class="attract-logo" src="" alt="VerticalParts">
-  <div class="attract-content">
-    <p class="attract-eyebrow">Soluções em Transporte Vertical</p>
-    <h1 class="t-hero attract-title">Elevando você<br>e seu negócio</h1>
-    <p class="t-md attract-sub">Elevadores, escadas, esteiras rolantes e peças para transporte vertical.</p>
-    <button class="attract-cta" onclick="showScreen('menu')" aria-label="Toque para conhecer">
-      ▶&nbsp;&nbsp;TOQUE PARA CONHECER
-    </button>
+
+  <!-- Hero photo top -->
+  <div class="attract-hero-wrap">
+    <img src="assets/clientes/aeroporto_brasilia/001.jpg" alt="Escada rolante VerticalParts">
+    <div class="attract-logo-wrap">
+      <img class="attract-logo" src="" alt="VerticalParts">
+    </div>
+  </div>
+
+  <!-- Navigation rows -->
+  <div class="attract-nav">
+
+    <div class="attract-row" onclick="showScreen('escadas')" aria-label="Escadas Rolante">
+      <div class="attract-row-img">
+        <img src="assets/clientes/kacual/001.jpg" alt="Escada Rolante">
+      </div>
+      <div class="attract-row-pill">
+        <span>Escadas<br>Rolante</span>
+      </div>
+    </div>
+
+    <div class="attract-row" onclick="showScreen('escadas')" aria-label="Esteiras Rolante">
+      <div class="attract-row-img">
+        <img src="assets/clientes/aeroporto_brasilia/003.jpg" alt="Esteira Rolante">
+      </div>
+      <div class="attract-row-pill">
+        <span>Esteiras<br>Rolante</span>
+      </div>
+    </div>
+
+    <div class="attract-row" onclick="showScreen('elevadores')" aria-label="Elevadores">
+      <div class="attract-row-img">
+        <img src="assets/clientes/dharuj/001.jpg" alt="Elevadores">
+      </div>
+      <div class="attract-row-pill">
+        <span>Elevadores</span>
+      </div>
+    </div>
+
+    <div class="attract-row" onclick="showScreen('servicos')" aria-label="Projetos Especiais">
+      <div class="attract-row-img">
+        <img src="assets/clientes/barbosa_supermercados/001.jpg" alt="Projetos Especiais">
+      </div>
+      <div class="attract-row-pill">
+        <span>Projetos<br>Especiais</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -894,6 +959,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
 /* ─── LOGOS ─────────────────────────────────────────────────── */
 const LOGO_COLOR = 'https://raw.githubusercontent.com/verticalpartsIA/vp-design-system/master/public/logo-color.png';
 document.querySelectorAll('.logo-badge img, .attract-logo').forEach(img => { img.src = LOGO_COLOR; });
+
 
 /* ─── OBRAS GRID ─────────────────────────────────────────────── */
 const CLIENTS = [
