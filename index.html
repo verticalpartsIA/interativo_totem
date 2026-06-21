@@ -496,6 +496,7 @@
       background: #0E0D13;
       z-index: 1;
     }
+    /* Subtle top accent line on panel */
     .slide-panel::before {
       content: '';
       position: absolute;
@@ -550,18 +551,21 @@
     .slide.vt-gold .slide-progress-fill  { background: #06050A; }
     .slide.vt-gold .slide-dot            { background: rgba(6,5,10,0.2); }
     .slide.vt-gold .slide-dot.active     { background: #06050A; }
-    .slide.vt-gold .slide-panel  { background: #1C1100; }
-    .slide.vt-gold .slide-panel::before { background: linear-gradient(90deg, transparent, rgba(6,5,10,0.18), transparent); }
+    .slide.vt-gold .slide-panel { background: #1C1100; }
     .slide.vt-gold .slide-overlay { background: linear-gradient(to bottom, transparent 0%, #1C1100 100%); }
+
+    .slide.vt-light .slide-panel { background: #F2F0EB; }
+    .slide.vt-light .slide-overlay { background: linear-gradient(to bottom, transparent 0%, #F2F0EB 100%); }
+    .slide.vt-light .slide-panel::before { background: linear-gradient(90deg, transparent, rgba(6,5,10,0.12), transparent); }
+
+    .slide.vt-amber .slide-panel { background: #0E0800; }
+    .slide.vt-amber .slide-overlay { background: linear-gradient(to bottom, transparent 0%, #0E0800 100%); }
 
     /* ── VT-LIGHT: cream/white, warm ── */
     .slide.vt-light .slide-placeholder {
       background: linear-gradient(145deg, #FAFAF5 0%, #F5F0E8 50%, #EDE8DC 100%);
     }
     .slide.vt-light .slide-placeholder-mark { opacity: 0.1; filter: brightness(0); }
-    .slide.vt-light .slide-panel  { background: #F0EEE8; }
-    .slide.vt-light .slide-panel::before { background: linear-gradient(90deg, transparent, rgba(6,5,10,0.1), transparent); }
-    .slide.vt-light .slide-overlay { background: linear-gradient(to bottom, transparent 0%, #F0EEE8 100%); }
 
     /* ── VT-AMBER: deep warm dark ── */
     .slide.vt-amber .slide-placeholder {
@@ -569,8 +573,6 @@
         radial-gradient(ellipse 70% 50% at 65% 25%, rgba(245,196,0,0.2) 0%, transparent 55%),
         linear-gradient(145deg, #1F1200 0%, #2A1800 45%, #0F0800 100%);
     }
-    .slide.vt-amber .slide-panel  { background: #0E0800; }
-    .slide.vt-amber .slide-overlay { background: linear-gradient(to bottom, transparent 0%, #0E0800 100%); }
     /* vt-dark keeps default overlay (already defined above) */
 
     /* ─── Top bar ─── */
@@ -649,7 +651,7 @@
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 42%;
-      padding: 16px 28px 122px;
+      padding: 18px 28px 130px;
       z-index: 5;
       display: flex;
       flex-direction: column;
@@ -674,7 +676,7 @@
     }
 
     .slide-client {
-      font-size: clamp(22px, 6vw, 32px);
+      font-size: clamp(22px, 6vw, 34px);
       font-weight: 700;
       text-transform: uppercase;
       line-height: 1.05;
@@ -687,7 +689,7 @@
     }
 
     .slide-city {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 500;
       color: var(--white-55);
       margin-bottom: 8px;
@@ -697,7 +699,7 @@
 
     /* description line */
     .slide-desc {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
       color: rgba(240, 237, 232, 0.55);
       line-height: 1.45;
@@ -913,9 +915,8 @@
       @keyframes attractPulse { 0%, 100% { opacity: 1; transform: none; } }
       @keyframes chevronCascade { 0%, 100% { opacity: 0.5; transform: none; } }
     }
-
     /* ─────────────────────────────────────────────────
-       CONTACT CARD
+       CONTACT CARD (last slide in feed)
        ───────────────────────────────────────────────── */
     .slide-contact {
       background: #06050A;
@@ -925,80 +926,160 @@
       justify-content: center;
       overflow: hidden;
     }
+
     .slide-contact .c-orb {
-      position: absolute; width: 120%; aspect-ratio: 1; border-radius: 50%;
+      position: absolute;
+      width: 120%; aspect-ratio: 1;
+      border-radius: 50%;
       top: -40%; left: -10%;
-      background: radial-gradient(circle at center, rgba(245,196,0,0.10) 0%, transparent 65%);
+      background: radial-gradient(circle at center,
+        rgba(245,196,0,0.10) 0%, transparent 65%);
       pointer-events: none;
     }
+
     .slide-contact .c-ring1 {
-      position: absolute; width: 500px; height: 500px; border-radius: 50%;
+      position: absolute;
+      width: 500px; height: 500px; border-radius: 50%;
       top: -160px; right: -160px;
-      border: 1px solid rgba(245,196,0,0.07); pointer-events: none;
+      border: 1px solid rgba(245,196,0,0.07);
+      pointer-events: none;
     }
+
     .slide-contact .c-ring2 {
-      position: absolute; width: 280px; height: 280px; border-radius: 50%;
+      position: absolute;
+      width: 300px; height: 300px; border-radius: 50%;
       bottom: 60px; left: -100px;
-      border: 1px solid rgba(245,196,0,0.06); pointer-events: none;
+      border: 1px solid rgba(245,196,0,0.06);
+      pointer-events: none;
     }
+
     .c-inner {
-      position: relative; z-index: 1; width: 100%;
-      padding: 0 36px;
-      display: flex; flex-direction: column; align-items: center;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 0 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .c-logo { height: 44px; width: auto; display: block; margin-bottom: 20px; }
+
+    .c-logo { height: 48px; width: auto; display: block; margin-bottom: 24px; }
+
     .c-divider {
-      width: 36px; height: 2px;
+      width: 40px; height: 2px;
       background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      border-radius: 999px; margin-bottom: 20px;
+      border-radius: 999px;
+      margin-bottom: 24px;
     }
+
     .c-headline {
-      font-size: 11px; font-weight: 600; letter-spacing: 3px;
-      text-transform: uppercase; color: rgba(240,237,232,0.38); margin-bottom: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(240,237,232,0.4);
+      margin-bottom: 28px;
     }
+
     .c-qr-row {
-      display: flex; align-items: flex-start; gap: 20px;
-      width: 100%; margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      width: 100%;
+      margin-bottom: 28px;
     }
+
     .c-qr-wrap {
-      flex-shrink: 0; width: 118px; height: 118px;
-      background: #fff; border-radius: 10px;
+      flex-shrink: 0;
+      width: 130px; height: 130px;
+      background: #fff;
+      border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
-      overflow: hidden; padding: 5px;
+      overflow: hidden;
+      padding: 6px;
     }
+
     .c-qr-wrap img { width: 100%; height: 100%; display: block; }
-    .c-contact-list { flex: 1; display: flex; flex-direction: column; gap: 10px; }
-    .c-contact-item { display: flex; align-items: flex-start; gap: 10px; }
+
+    .c-contact-list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .c-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
     .c-contact-icon {
-      width: 30px; height: 30px; flex-shrink: 0;
-      background: rgba(245,196,0,0.10); border: 1px solid rgba(245,196,0,0.20);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; flex-shrink: 0;
+      background: rgba(245,196,0,0.1);
+      border: 1px solid rgba(245,196,0,0.2);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
     }
-    .c-contact-icon svg { width: 15px; height: 15px; }
-    .c-contact-text { display: flex; flex-direction: column; gap: 1px; }
+
+    .c-contact-icon svg { width: 16px; height: 16px; }
+
+    .c-contact-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
     .c-contact-label {
-      font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; color: rgba(245,196,0,0.55);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(245,196,0,0.6);
     }
-    .c-contact-value { font-size: 13px; font-weight: 500; color: rgba(240,237,232,0.82); line-height: 1.3; }
-    .c-sep {
-      width: 100%; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(245,196,0,0.10), transparent);
-      margin: 16px 0;
+
+    .c-contact-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(240,237,232,0.85);
+      line-height: 1.3;
     }
-    .c-address { width: 100%; display: flex; align-items: flex-start; gap: 10px; margin-bottom: 18px; }
+
+    .c-address {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(245,196,0,0.08);
+      margin-bottom: 20px;
+    }
+
     .c-address-icon {
-      width: 30px; height: 30px; flex-shrink: 0;
-      background: rgba(245,196,0,0.10); border: 1px solid rgba(245,196,0,0.20);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; flex-shrink: 0;
+      background: rgba(245,196,0,0.1);
+      border: 1px solid rgba(245,196,0,0.2);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
     }
-    .c-address-text { font-size: 13px; color: rgba(240,237,232,0.60); line-height: 1.5; padding-top: 4px; }
-    .c-social { display: flex; gap: 10px; }
+
+    .c-address-text {
+      font-size: 14px; color: rgba(240,237,232,0.65); line-height: 1.5;
+    }
+
+    .c-social {
+      display: flex; gap: 12px;
+    }
+
     .c-social-pill {
-      padding: 6px 14px;
-      background: rgba(245,196,0,0.08); border: 1px solid rgba(245,196,0,0.18);
-      border-radius: 20px; font-size: 12px; font-weight: 600;
-      color: var(--accent); letter-spacing: 0.3px;
+      padding: 7px 16px;
+      background: rgba(245,196,0,0.08);
+      border: 1px solid rgba(245,196,0,0.18);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.3px;
     }
   </style>
 </head>
@@ -1397,7 +1478,7 @@
       slideEls.push(el);
     });
 
-    // Contact card as final slide
+    // Add contact card as final slide
     const contactEl = buildContactCard();
     $container.appendChild(contactEl);
     slideEls.push(contactEl);
@@ -1411,6 +1492,82 @@
   const THEMES       = ['vt-dark', 'vt-gold', 'vt-light', 'vt-amber'];
   const LOGO_COLOR   = 'https://raw.githubusercontent.com/verticalpartsIA/vp-design-system/master/public/logo-color.png';
   const LOGO_MARK    = 'https://raw.githubusercontent.com/verticalpartsIA/vp-design-system/master/public/logo-mark.png';
+
+  function buildContactCard() {
+    const el = document.createElement('div');
+    el.className = 'slide slide-contact';
+
+    el.innerHTML = `
+    <div class="c-orb"></div>
+    <div class="c-ring1"></div>
+    <div class="c-ring2"></div>
+    <div class="c-inner">
+      <img class="c-logo" src="${LOGO_COLOR}" alt="VerticalParts">
+      <div class="c-divider"></div>
+      <div class="c-headline">Entre em contato</div>
+
+      <div class="c-qr-row">
+        <div class="c-qr-wrap">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=https%3A%2F%2Fwww.verticalparts.com.br&color=000000&bgcolor=ffffff" alt="QR">
+        </div>
+        <div class="c-contact-list">
+          <div class="c-contact-item">
+            <div class="c-contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.8 19.8 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8a16 16 0 006.29 6.29l1.14-1.14a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div class="c-contact-text">
+              <div class="c-contact-label">Telefone</div>
+              <div class="c-contact-value">(11) 2528-6473</div>
+            </div>
+          </div>
+          <div class="c-contact-item">
+            <div class="c-contact-icon">
+              <svg viewBox="0 0 24 24" fill="#F5C400">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M11.998 0C5.372 0 0 5.372 0 11.998c0 2.117.554 4.102 1.523 5.825L.046 23.954l6.344-1.662A11.941 11.941 0 0011.998 24c6.626 0 12-5.372 12-12.002C23.998 5.372 18.624 0 11.998 0z" fill-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="c-contact-text">
+              <div class="c-contact-label">WhatsApp</div>
+              <div class="c-contact-value">+55 11 91894-9307</div>
+            </div>
+          </div>
+          <div class="c-contact-item">
+            <div class="c-contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="c-contact-text">
+              <div class="c-contact-label">E-mail</div>
+              <div class="c-contact-value">comercial@verticalparts.com.br</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-address">
+        <div class="c-address-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="2" width="16" height="16">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div class="c-address-text">Rua Armandina Braga de Almeida, 383<br>São Paulo, SP</div>
+      </div>
+
+      <div class="c-social">
+        <div class="c-social-pill">@verticalparts</div>
+        <div class="c-social-pill">verticalparts.com.br</div>
+      </div>
+    </div>
+  `;
+
+    return el;
+  }
 
   function createSlideEl(data, idx) {
     const el = document.createElement('div');
@@ -1510,6 +1667,9 @@
     panel.className = 'slide-panel';
 
     /* Assemble */
+    const panel = document.createElement('div');
+    panel.className = 'slide-panel';
+
     el.appendChild(img);
     el.appendChild(placeholder);
     el.appendChild(panel);
