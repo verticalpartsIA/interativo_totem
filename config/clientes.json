@@ -1,13 +1,167 @@
 [
-  {"id": "feira_da_madrugada", "cliente": "Feira da Madrugada", "cidade": "São Paulo, SP", "categoria": "Escadas Rolantes", "imagens": ["assets/clientes/feira_da_madrugada/001.jpg","assets/clientes/feira_da_madrugada/002.jpg","assets/clientes/feira_da_madrugada/003.jpg","assets/clientes/feira_da_madrugada/004.jpg","assets/clientes/feira_da_madrugada/005.jpg"]},
-  {"id": "kacual", "cliente": "Kaçula", "cidade": "São Paulo, SP", "categoria": "Escadas Rolantes", "imagens": ["assets/clientes/kacual/001.jpg","assets/clientes/kacual/002.jpg","assets/clientes/kacual/003.jpg","assets/clientes/kacual/004.jpg","assets/clientes/kacual/005.jpg"]},
-  {"id": "mercadao", "cliente": "Mercadão", "cidade": "São Paulo, SP", "categoria": "Esteiras Rolantes", "imagens": ["assets/clientes/mercadao/001.jpg","assets/clientes/mercadao/002.jpg","assets/clientes/mercadao/003.jpg","assets/clientes/mercadao/004.jpg","assets/clientes/mercadao/005.jpg"]},
-  {"id": "roldao", "cliente": "Roldão", "cidade": "São Paulo, SP", "categoria": "Escadas Rolantes", "imagens": ["assets/clientes/roldao/001.jpg","assets/clientes/roldao/002.jpg","assets/clientes/roldao/003.jpg","assets/clientes/roldao/004.jpg","assets/clientes/roldao/005.jpg"]},
-  {"id": "rossi", "cliente": "Rossi", "cidade": "São Paulo, SP", "categoria": "Elevadores", "imagens": ["assets/clientes/rossi/001.jpg","assets/clientes/rossi/002.jpg","assets/clientes/rossi/003.jpg","assets/clientes/rossi/004.jpg","assets/clientes/rossi/005.jpg"]},
-  {"id": "shoebiz", "cliente": "Shoebiz", "cidade": "São Paulo, SP", "categoria": "Escadas Rolantes", "imagens": ["assets/clientes/shoebiz/001.jpg","assets/clientes/shoebiz/002.jpg","assets/clientes/shoebiz/003.jpg","assets/clientes/shoebiz/004.jpg","assets/clientes/shoebiz/005.jpg"]},
-  {"id": "aeroporto_brasilia", "cliente": "Aeroporto de Brasília", "cidade": "Brasília, DF", "categoria": "Esteiras Rolantes", "imagens": ["assets/clientes/aeroporto_brasilia/001.jpg","assets/clientes/aeroporto_brasilia/002.jpg","assets/clientes/aeroporto_brasilia/003.jpg","assets/clientes/aeroporto_brasilia/004.jpg","assets/clientes/aeroporto_brasilia/005.jpg"]},
-  {"id": "armazem_marajo", "cliente": "Armazém Marajó", "cidade": "São Paulo, SP", "categoria": "Escadas Rolantes", "imagens": ["assets/clientes/armazem_marajo/001.jpg","assets/clientes/armazem_marajo/002.jpg","assets/clientes/armazem_marajo/003.jpg","assets/clientes/armazem_marajo/004.jpg","assets/clientes/armazem_marajo/005.jpg"]},
-  {"id": "barbosa_supermercados", "cliente": "Barbosa Supermercados", "cidade": "São Paulo, SP", "categoria": "Escadas Rolantes", "imagens": ["assets/clientes/barbosa_supermercados/001.jpg","assets/clientes/barbosa_supermercados/002.jpg","assets/clientes/barbosa_supermercados/003.jpg","assets/clientes/barbosa_supermercados/004.jpg","assets/clientes/barbosa_supermercados/005.jpg"]},
-  {"id": "camara", "cliente": "Câmara", "cidade": "Brasília, DF", "categoria": "Elevadores", "imagens": ["assets/clientes/camara/001.jpg","assets/clientes/camara/002.jpg","assets/clientes/camara/003.jpg","assets/clientes/camara/004.jpg","assets/clientes/camara/005.jpg"]},
-  {"id": "dharuj", "cliente": "Dharuj", "cidade": "São Paulo, SP", "categoria": "Escadas Rolantes", "imagens": ["assets/clientes/dharuj/001.jpg","assets/clientes/dharuj/002.jpg","assets/clientes/dharuj/003.jpg","assets/clientes/dharuj/004.jpg","assets/clientes/dharuj/005.jpg"]}
+  {
+    "id": "feira_da_madrugada",
+    "cliente": "Feira da Madrugada",
+    "cidade": "São Paulo, SP",
+    "categoria": "Escadas Rolantes",
+    "descricao": "Modernização completa das escadas rolantes no maior atacado popular da América Latina.",
+    "stats": ["18 escadas", "Alto fluxo", "Desde 2017"],
+    "imagens": [
+      "assets/clientes/feira_da_madrugada/001.jpg",
+      "assets/clientes/feira_da_madrugada/002.jpg",
+      "assets/clientes/feira_da_madrugada/003.jpg",
+      "assets/clientes/feira_da_madrugada/004.jpg",
+      "assets/clientes/feira_da_madrugada/005.jpg"
+    ]
+  },
+  {
+    "id": "kacual",
+    "cliente": "Kaçula",
+    "cidade": "São Paulo, SP",
+    "categoria": "Escadas Rolantes",
+    "descricao": "Instalação e manutenção em rede de lojas com operação contínua e alto volume de clientes.",
+    "stats": ["8 escadas", "12 lojas", "Desde 2019"],
+    "imagens": [
+      "assets/clientes/kacual/001.jpg",
+      "assets/clientes/kacual/002.jpg",
+      "assets/clientes/kacual/003.jpg",
+      "assets/clientes/kacual/004.jpg",
+      "assets/clientes/kacual/005.jpg"
+    ]
+  },
+  {
+    "id": "mercadao",
+    "cliente": "Mercadão",
+    "cidade": "São Paulo, SP",
+    "categoria": "Esteiras Rolantes",
+    "descricao": "Esteiras rolantes para o histórico Mercado Municipal de São Paulo, patrimônio da cidade.",
+    "stats": ["4 esteiras", "Tombado SP", "Desde 2016"],
+    "imagens": [
+      "assets/clientes/mercadao/001.jpg",
+      "assets/clientes/mercadao/002.jpg",
+      "assets/clientes/mercadao/003.jpg",
+      "assets/clientes/mercadao/004.jpg",
+      "assets/clientes/mercadao/005.jpg"
+    ]
+  },
+  {
+    "id": "roldao",
+    "cliente": "Roldão",
+    "cidade": "São Paulo, SP",
+    "categoria": "Escadas Rolantes",
+    "descricao": "Suporte técnico e troca de componentes críticos em rede atacadista de grande escala.",
+    "stats": ["10 escadas", "5 unidades", "Desde 2018"],
+    "imagens": [
+      "assets/clientes/roldao/001.jpg",
+      "assets/clientes/roldao/002.jpg",
+      "assets/clientes/roldao/003.jpg",
+      "assets/clientes/roldao/004.jpg",
+      "assets/clientes/roldao/005.jpg"
+    ]
+  },
+  {
+    "id": "rossi",
+    "cliente": "Rossi",
+    "cidade": "São Paulo, SP",
+    "categoria": "Elevadores",
+    "descricao": "Fornecimento e instalação de elevadores residenciais em empreendimentos de alto padrão.",
+    "stats": ["32 elevadores", "9 torres", "Desde 2015"],
+    "imagens": [
+      "assets/clientes/rossi/001.jpg",
+      "assets/clientes/rossi/002.jpg",
+      "assets/clientes/rossi/003.jpg",
+      "assets/clientes/rossi/004.jpg",
+      "assets/clientes/rossi/005.jpg"
+    ]
+  },
+  {
+    "id": "shoebiz",
+    "cliente": "Shoebiz",
+    "cidade": "São Paulo, SP",
+    "categoria": "Escadas Rolantes",
+    "descricao": "Manutenção preventiva e corretiva em rede varejista de calçados com lojas em shoppings.",
+    "stats": ["6 escadas", "Contrato anual", "Desde 2020"],
+    "imagens": [
+      "assets/clientes/shoebiz/001.jpg",
+      "assets/clientes/shoebiz/002.jpg",
+      "assets/clientes/shoebiz/003.jpg",
+      "assets/clientes/shoebiz/004.jpg",
+      "assets/clientes/shoebiz/005.jpg"
+    ]
+  },
+  {
+    "id": "aeroporto_brasilia",
+    "cliente": "Aeroporto de Brasília",
+    "cidade": "Brasília, DF",
+    "categoria": "Esteiras Rolantes",
+    "descricao": "Revisão e modernização de esteiras de bagagem e passageiros no 2º maior aeroporto do país.",
+    "stats": ["22 esteiras", "24h operação", "Desde 2014"],
+    "imagens": [
+      "assets/clientes/aeroporto_brasilia/001.jpg",
+      "assets/clientes/aeroporto_brasilia/002.jpg",
+      "assets/clientes/aeroporto_brasilia/003.jpg",
+      "assets/clientes/aeroporto_brasilia/004.jpg",
+      "assets/clientes/aeroporto_brasilia/005.jpg"
+    ]
+  },
+  {
+    "id": "armazem_marajo",
+    "cliente": "Armazém Marajó",
+    "cidade": "São Paulo, SP",
+    "categoria": "Escadas Rolantes",
+    "descricao": "Implantação de escadas rolantes em espaço misto de armazém e varejo com múltiplos andares.",
+    "stats": ["5 escadas", "3 pavimentos", "Desde 2021"],
+    "imagens": [
+      "assets/clientes/armazem_marajo/001.jpg",
+      "assets/clientes/armazem_marajo/002.jpg",
+      "assets/clientes/armazem_marajo/003.jpg",
+      "assets/clientes/armazem_marajo/004.jpg",
+      "assets/clientes/armazem_marajo/005.jpg"
+    ]
+  },
+  {
+    "id": "barbosa_supermercados",
+    "cliente": "Barbosa Supermercados",
+    "cidade": "São Paulo, SP",
+    "categoria": "Escadas Rolantes",
+    "descricao": "Parceria de longo prazo para manutenção e expansão das escadas em rede supermercadista.",
+    "stats": ["14 escadas", "7 lojas", "Desde 2013"],
+    "imagens": [
+      "assets/clientes/barbosa_supermercados/001.jpg",
+      "assets/clientes/barbosa_supermercados/002.jpg",
+      "assets/clientes/barbosa_supermercados/003.jpg",
+      "assets/clientes/barbosa_supermercados/004.jpg",
+      "assets/clientes/barbosa_supermercados/005.jpg"
+    ]
+  },
+  {
+    "id": "camara",
+    "cliente": "Câmara",
+    "cidade": "Brasília, DF",
+    "categoria": "Elevadores",
+    "descricao": "Manutenção e adequação dos elevadores da Câmara dos Deputados às normas ABNT atuais.",
+    "stats": ["28 elevadores", "Edifício oficial", "Desde 2012"],
+    "imagens": [
+      "assets/clientes/camara/001.jpg",
+      "assets/clientes/camara/002.jpg",
+      "assets/clientes/camara/003.jpg",
+      "assets/clientes/camara/004.jpg",
+      "assets/clientes/camara/005.jpg"
+    ]
+  },
+  {
+    "id": "dharuj",
+    "cliente": "Dharuj",
+    "cidade": "São Paulo, SP",
+    "categoria": "Escadas Rolantes",
+    "descricao": "Instalação de escadas rolantes em centro comercial de médio porte com foco em confiabilidade.",
+    "stats": ["4 escadas", "2 torres", "Desde 2022"],
+    "imagens": [
+      "assets/clientes/dharuj/001.jpg",
+      "assets/clientes/dharuj/002.jpg",
+      "assets/clientes/dharuj/003.jpg",
+      "assets/clientes/dharuj/004.jpg",
+      "assets/clientes/dharuj/005.jpg"
+    ]
+  }
 ]

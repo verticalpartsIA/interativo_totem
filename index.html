@@ -67,7 +67,6 @@
       position: relative;
       overflow: hidden;
       touch-action: none;
-      /* Subtle outer glow so it floats on dark desktops */
       box-shadow:
         0 0 0 1px rgba(255,255,255,0.05),
         0 0 80px rgba(0,0,0,0.8);
@@ -97,7 +96,7 @@
       display: none;
     }
 
-    /* Technical drawing paper grid — subtle, earned by subject matter */
+    /* Technical drawing paper grid */
     #home::before {
       content: '';
       position: absolute;
@@ -132,7 +131,7 @@
       gap: 0;
     }
 
-    /* Ghost number — largest typographic element, purely atmospheric */
+    /* Ghost number — purely atmospheric */
     .home-ghost {
       position: absolute;
       bottom: 108px;
@@ -147,7 +146,6 @@
       user-select: none;
       line-height: 1;
       z-index: 0;
-      /* Condensed feel — squish with transform */
       transform: scaleX(0.82);
     }
 
@@ -158,6 +156,7 @@
       color: var(--text);
       line-height: 1;
       text-align: center;
+      transition: opacity 0.4s ease;
     }
 
     .home-logo strong {
@@ -169,6 +168,7 @@
       height: 3px;
       background: var(--accent);
       margin: 28px auto 32px;
+      transition: opacity 0.4s ease;
     }
 
     .home-tagline {
@@ -178,6 +178,14 @@
       line-height: 1.45;
       text-align: center;
       max-width: 340px;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Dimmed class applied during attract mode */
+    #home.attract-dim .home-logo,
+    #home.attract-dim .home-divider,
+    #home.attract-dim .home-tagline {
+      opacity: 0.35;
     }
 
     /* CTA section anchored to bottom */
@@ -201,7 +209,6 @@
       border: none;
       border-radius: 0;
       cursor: pointer;
-      /* No transition — hard mechanical press */
       transition: background 0.1s;
     }
 
@@ -218,6 +225,109 @@
     }
 
     /* ─────────────────────────────────────────────────
+       ATTRACT MODE OVERLAY
+       ───────────────────────────────────────────────── */
+    #attract {
+      position: absolute;
+      inset: 0;
+      z-index: 25;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    #attract.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Fullscreen photo layer */
+    .attract-photo-a,
+    .attract-photo-b {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 1.2s ease;
+    }
+
+    .attract-photo-a { opacity: 1; z-index: 0; }
+    .attract-photo-b { opacity: 0; z-index: 1; }
+
+    /* Heavy overlay so text is readable */
+    .attract-vignette {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 50%, transparent 20%, rgba(7,7,7,0.55) 100%),
+        linear-gradient(to bottom, rgba(7,7,7,0.5) 0%, rgba(7,7,7,0.2) 40%, rgba(7,7,7,0.2) 60%, rgba(7,7,7,0.6) 100%);
+      animation: attractVignettePulse 3s ease-in-out infinite;
+    }
+
+    @keyframes attractVignettePulse {
+      0%, 100% { box-shadow: inset 0 0 100px rgba(245,196,0,0.0); }
+      50%       { box-shadow: inset 0 0 100px rgba(245,196,0,0.18); }
+    }
+
+    /* Center content */
+    .attract-center {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .attract-cta {
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text);
+      text-align: center;
+      line-height: 1.1;
+      animation: attractPulse 2s ease-in-out infinite;
+      text-shadow: 0 2px 32px rgba(0,0,0,0.8);
+    }
+
+    @keyframes attractPulse {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50%       { opacity: 1;    transform: scale(1.025); }
+    }
+
+    /* Cascading chevrons */
+    .attract-chevrons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin-top: 28px;
+    }
+
+    .attract-chevron {
+      width: 40px;
+      height: 24px;
+      display: block;
+      opacity: 0;
+      animation: chevronCascade 1.8s ease-in-out infinite;
+    }
+
+    .attract-chevron:nth-child(1) { animation-delay: 0s; }
+    .attract-chevron:nth-child(2) { animation-delay: 0.25s; }
+    .attract-chevron:nth-child(3) { animation-delay: 0.5s; }
+
+    @keyframes chevronCascade {
+      0%        { opacity: 0;   transform: translateY(-8px); }
+      30%, 60%  { opacity: 0.7; transform: translateY(0); }
+      100%      { opacity: 0;   transform: translateY(8px); }
+    }
+
+    /* ─────────────────────────────────────────────────
        FEED — slide container
        ───────────────────────────────────────────────── */
     #feed {
@@ -225,7 +335,6 @@
       inset: 0;
       z-index: 10;
       overflow: hidden;
-      /* Starts hidden; revealed when home exits */
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease 0.2s;
@@ -236,11 +345,9 @@
       pointer-events: auto;
     }
 
-    /* The slides container — fills stage, all slides positioned inside */
     #slides-container {
       position: absolute;
       inset: 0;
-      /* No overflow clip here — slides translate outside bounds during drag */
     }
 
     /* ─────────────────────────────────────────────────
@@ -262,7 +369,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      /* Ken Burns: only activated on .active slide via .kb class */
       transform-origin: center center;
     }
 
@@ -275,15 +381,15 @@
       to   { transform: scale(1.07); }
     }
 
-    /* Gradient overlay — heavier at bottom for text legibility, subtle at top */
+    /* Gradient overlay */
     .slide-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(7,7,7,0.90)  0%,
-        rgba(7,7,7,0.45) 40%,
-        rgba(7,7,7,0.10) 65%,
+        rgba(7,7,7,0.92)  0%,
+        rgba(7,7,7,0.50) 38%,
+        rgba(7,7,7,0.10) 62%,
         rgba(7,7,7,0.30) 100%
       );
       pointer-events: none;
@@ -335,7 +441,6 @@
       font-weight: 900;
     }
 
-    /* Slide counter — monospaced to feel like an engineering readout */
     .slide-counter {
       font-family: 'Courier New', 'Courier', monospace;
       font-size: 13px;
@@ -364,7 +469,7 @@
       transition: height 0.4s cubic-bezier(0.16,1,0.3,1);
     }
 
-    /* ─── Photo dots (which of 5 images within this client) ─── */
+    /* ─── Photo dots ─── */
     .slide-dots {
       position: absolute;
       right: 10px;
@@ -409,7 +514,6 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 14px;
-      /* Text reveal: starts offset, animated to position */
       opacity: 0;
       transform: translateY(24px);
     }
@@ -430,11 +534,50 @@
       font-size: 19px;
       font-weight: 500;
       color: var(--white-55);
+      margin-bottom: 10px;
       opacity: 0;
       transform: translateY(24px);
     }
 
-    /* Text reveal animation classes applied by JS */
+    /* NEW: description line */
+    .slide-desc {
+      font-size: 19px;
+      font-weight: 400;
+      color: rgba(240, 237, 232, 0.55);
+      line-height: 1.4;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    /* NEW: stats chips row */
+    .slide-stats {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px;
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    .slide-stat-chip {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: rgba(240, 237, 232, 0.70);
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      border-radius: 20px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    /* Text reveal animation classes */
     .reveal-in {
       animation: revealText 420ms ease-out forwards;
     }
@@ -447,29 +590,47 @@
     }
 
     /* ─────────────────────────────────────────────────
-       CONTACT FAB
+       CONTACT FAB WRAPPER (for arc ring)
        ───────────────────────────────────────────────── */
-    #fab {
+    #fab-wrap {
       position: absolute;
       right: 32px;
       bottom: 32px;
+      z-index: 30;
+      display: none;
+      width: 76px;
+      height: 76px;
+    }
+
+    #fab-wrap.visible {
+      display: block;
+    }
+
+    /* Arc ring SVG sits just outside the FAB */
+    .fab-ring {
+      position: absolute;
+      inset: -7px;
+      width: 90px;
+      height: 90px;
+      pointer-events: none;
+      transform: rotate(-90deg);
+    }
+
+    #fab {
+      position: absolute;
+      inset: 0;
       width: 76px;
       height: 76px;
       border-radius: 50%;
       background: var(--accent);
       border: none;
       cursor: pointer;
-      z-index: 30;
-      display: none;  /* shown only during feed */
+      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 4px;
       animation: fabPulse 2.5s ease-in-out infinite;
-    }
-
-    #fab.visible {
-      display: flex;
     }
 
     @keyframes fabPulse {
@@ -508,7 +669,6 @@
       justify-content: center;
       gap: 0;
       padding: 48px 40px;
-      /* Slide up from bottom */
       transform: translateY(100%);
       transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -593,6 +753,8 @@
       .slide.active .slide-img { animation: none; }
       @keyframes revealText { to { opacity: 1; transform: none; } }
       @keyframes fabPulse { 0%, 100% { box-shadow: none; } }
+      @keyframes attractPulse { 0%, 100% { opacity: 1; transform: none; } }
+      @keyframes chevronCascade { 0%, 100% { opacity: 0.5; transform: none; } }
     }
   </style>
 </head>
@@ -606,27 +768,49 @@
   <div id="home">
 
     <div class="home-inner">
-      <!-- Logo -->
       <div class="home-logo">Vertical<strong>Parts</strong></div>
-
-      <!-- Gold rule — weight, not decoration -->
       <div class="home-divider"></div>
-
-      <!-- Tagline: plain, specific, from the subject -->
       <p class="home-tagline">
         Transporte vertical para os maiores empreendimentos do Brasil.
       </p>
     </div>
 
-    <!-- Ghost "55" — the portfolio count as ambient typography -->
     <div class="home-ghost" aria-hidden="true">55</div>
 
-    <!-- CTA anchored to floor -->
     <div class="home-cta">
       <button class="home-cta-btn" id="home-btn">EXPLORAR OBRAS</button>
       <p class="home-hint">↑ Arraste para navegar</p>
     </div>
 
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       ATTRACT MODE OVERLAY
+  ════════════════════════════════════════════ -->
+  <div id="attract" aria-hidden="true">
+    <!-- Two-layer crossfade images -->
+    <img class="attract-photo-a" id="attract-img-a" src="" alt="" />
+    <img class="attract-photo-b" id="attract-img-b" src="" alt="" />
+
+    <!-- Vignette -->
+    <div class="attract-vignette"></div>
+
+    <!-- Center CTA -->
+    <div class="attract-center">
+      <div class="attract-cta">TOQUE PARA<br>EXPLORAR</div>
+      <div class="attract-chevrons" aria-hidden="true">
+        <!-- Each chevron is an inline SVG pointing upward -->
+        <svg class="attract-chevron" viewBox="0 0 40 24" fill="none">
+          <polyline points="4,20 20,6 36,20" stroke="rgba(245,196,0,0.8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="attract-chevron" viewBox="0 0 40 24" fill="none">
+          <polyline points="4,20 20,6 36,20" stroke="rgba(245,196,0,0.8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="attract-chevron" viewBox="0 0 40 24" fill="none">
+          <polyline points="4,20 20,6 36,20" stroke="rgba(245,196,0,0.8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
   </div>
 
   <!-- ═══════════════════════════════════════════
@@ -637,16 +821,29 @@
   </div>
 
   <!-- ═══════════════════════════════════════════
-       CONTACT FAB
+       CONTACT FAB (with arc ring wrapper)
   ════════════════════════════════════════════ -->
-  <button id="fab" aria-label="Abrir contato">
-    <!-- Envelope SVG -->
-    <svg viewBox="0 0 24 24" fill="none" stroke="#070707" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <rect x="2" y="4" width="20" height="16" rx="1" />
-      <polyline points="2,4 12,13 22,4" />
+  <div id="fab-wrap">
+    <!-- Arc progress ring -->
+    <svg class="fab-ring" viewBox="0 0 90 90" aria-hidden="true">
+      <!-- Track circle -->
+      <circle cx="45" cy="45" r="40" fill="none"
+        stroke="rgba(255,255,255,0.15)" stroke-width="2.5"/>
+      <!-- Fill circle — animated by JS via stroke-dashoffset -->
+      <circle id="ring-fill" cx="45" cy="45" r="40" fill="none"
+        stroke="#F5C400" stroke-width="2.5"
+        stroke-dasharray="251.3" stroke-dashoffset="251.3"
+        stroke-linecap="round"
+        style="opacity:0.85"/>
     </svg>
-    <span class="fab-label">Contato</span>
-  </button>
+    <button id="fab" aria-label="Abrir contato">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#070707" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="1" />
+        <polyline points="2,4 12,13 22,4" />
+      </svg>
+      <span class="fab-label">Contato</span>
+    </button>
+  </div>
 
   <!-- ═══════════════════════════════════════════
        CONTACT OVERLAY
@@ -666,24 +863,49 @@
 
 <script>
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     CONSTANTS & STATE
+     CONSTANTS & TIMINGS
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  const IDLE_MS       = 180_000;  // 3 minutes
-  const SNAP_THRESH   = 0.18;     // 18% of stage height triggers slide change
-  const SPRING        = 'cubic-bezier(0.16, 1, 0.3, 1)';
-  const SPRING_DUR    = '480ms';
-  const RUBBER_FACTOR = 0.15;     // resistance at first/last slide
+  const IDLE_MS            = 180_000;  // 3 min → return to home from feed
+  const ATTRACT_MS         = 20_000;   // 20s idle on home → attract mode
+  const ATTRACT_PHOTO_MS   = 4_000;    // 4s per photo in attract mode
+  const AUTO_ADV_MS        = 6_000;    // 6s no-touch → auto-advance
+  const AUTO_ADV_RESUME_MS = 8_000;    // 8s after touch → resume auto-advance
+  const SNAP_THRESH        = 0.18;     // 18% stage height
+  const SPRING             = 'cubic-bezier(0.16, 1, 0.3, 1)';
+  const SPRING_DUR         = '480ms';
+  const RUBBER_FACTOR      = 0.15;
+  /* Circumference of the arc ring: 2π × 40 ≈ 251.3 */
+  const RING_CIRC          = 251.3;
 
-  let slides       = [];          // flat array of {src, cliente, cidade, categoria, photoIndex, slideIndex}
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     STATE
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  let slides       = [];
+  let SLIDES_SRCS  = [];  // flat list of all image srcs for attract cycling
   let currentIndex = 0;
-  let slideEls     = [];          // DOM elements, one per slide
+  let slideEls     = [];
 
   let touchStartY  = 0;
   let touchCurY    = 0;
   let isDragging   = false;
   let isAnimating  = false;
 
-  let idleTimer    = null;
+  // Timers
+  let idleTimer         = null;
+  let attractTimer      = null;
+  let attractPhotoTimer = null;
+  let autoAdvTimer      = null;
+  let autoAdvRAF        = null;
+  let autoAdvStart      = null;
+  let autoAdvDuration   = AUTO_ADV_MS;
+
+  // Attract state
+  let isAttractMode   = false;
+  let attractIndex    = 0;
+  let attractLayerA   = true; // which img layer is "on top"
+
+  // Whether user has manually interacted in feed (affects resume delay)
+  let feedHadTouch = false;
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      DOM REFS
@@ -693,12 +915,17 @@
   const $homeBtn    = document.getElementById('home-btn');
   const $feed       = document.getElementById('feed');
   const $container  = document.getElementById('slides-container');
+  const $fabWrap    = document.getElementById('fab-wrap');
   const $fab        = document.getElementById('fab');
+  const $ringFill   = document.getElementById('ring-fill');
   const $overlay    = document.getElementById('contact-overlay');
   const $backBtn    = document.getElementById('contact-back-btn');
+  const $attract    = document.getElementById('attract');
+  const $attractA   = document.getElementById('attract-img-a');
+  const $attractB   = document.getElementById('attract-img-b');
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     IDLE TIMER
+     IDLE TIMER (feed → home)
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   function resetIdle() {
     clearTimeout(idleTimer);
@@ -706,57 +933,200 @@
   }
 
   function returnHome() {
-    // Close overlay, reset to first slide, show home
     closeContact();
+    stopAutoAdvance();
     if (currentIndex !== 0) {
       currentIndex = 0;
-      positionSlides(false);  // instant, no animation
+      positionSlides(false);
     }
     showHome();
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     ATTRACT MODE TIMER (home idle → attract)
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  function resetAttractTimer() {
+    clearTimeout(attractTimer);
+    attractTimer = setTimeout(enterAttractMode, ATTRACT_MS);
+  }
+
+  function enterAttractMode() {
+    if (isAttractMode) return;
+    if ($feed.classList.contains('visible')) return; // only on home
+    isAttractMode = true;
+
+    // Pick attract photos: every 5th slide src for variety
+    const photos = SLIDES_SRCS.filter((_, i) => i % 5 === 0);
+    if (photos.length === 0) return;
+
+    // Dim the home content behind
+    $home.classList.add('attract-dim');
+
+    // Seed first photo on layer A
+    attractIndex = 0;
+    $attractA.src = photos[attractIndex % photos.length];
+    $attractA.style.opacity = '1';
+    $attractB.style.opacity = '0';
+    attractLayerA = true;
+
+    $attract.classList.add('visible');
+    $attract.setAttribute('aria-hidden', 'false');
+
+    // Cycle photos every ATTRACT_PHOTO_MS
+    attractPhotoTimer = setInterval(() => {
+      attractIndex++;
+      const nextSrc = photos[attractIndex % photos.length];
+      if (attractLayerA) {
+        // Load next into B, fade B in (B is on top — z-index 1)
+        $attractB.src = nextSrc;
+        $attractB.style.opacity = '1';
+        $attractA.style.opacity = '0';
+        attractLayerA = false;
+      } else {
+        $attractA.src = nextSrc;
+        $attractA.style.opacity = '1';
+        $attractB.style.opacity = '0';
+        attractLayerA = true;
+      }
+    }, ATTRACT_PHOTO_MS);
+  }
+
+  function exitAttractMode() {
+    if (!isAttractMode) return;
+    isAttractMode = false;
+    clearInterval(attractPhotoTimer);
+    $attract.classList.remove('visible');
+    $attract.setAttribute('aria-hidden', 'true');
+    $home.classList.remove('attract-dim');
   }
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      HOME ↔ FEED TRANSITIONS
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   function enterFeed() {
+    exitAttractMode();
+    clearTimeout(attractTimer);
     resetIdle();
+    feedHadTouch = false;
+
     $home.classList.add('exiting');
     $feed.classList.add('visible');
-    $fab.classList.add('visible');
-    // After transition completes, fully hide home
+    $fabWrap.classList.add('visible');
+
     setTimeout(() => {
       $home.classList.add('hidden');
       $home.classList.remove('exiting');
     }, 520);
+
+    // Start auto-advance after initial delay
+    scheduleAutoAdvance(AUTO_ADV_MS);
   }
 
   function showHome() {
     $home.classList.remove('hidden', 'exiting');
     $feed.classList.remove('visible');
-    $fab.classList.remove('visible');
+    $fabWrap.classList.remove('visible');
     clearTimeout(idleTimer);
+    stopAutoAdvance();
+    feedHadTouch = false;
+    // Reset ring
+    setRingProgress(0);
+    // Start attract timer
+    resetAttractTimer();
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     AUTO-ADVANCE (feed)
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  function scheduleAutoAdvance(delay) {
+    stopAutoAdvance();
+    autoAdvDuration = delay;
+    autoAdvTimer = setTimeout(() => {
+      startAutoAdvanceAnim();
+    }, 0); // kick off immediately — animation itself takes `delay` ms
+
+    // Actually we drive via rAF from start:
+    stopAutoAdvance();
+    autoAdvStart = performance.now();
+    autoAdvDuration = delay;
+    setRingProgress(0);
+    animateRing();
+  }
+
+  function animateRing() {
+    autoAdvRAF = requestAnimationFrame((now) => {
+      const elapsed = now - autoAdvStart;
+      const progress = Math.min(elapsed / autoAdvDuration, 1);
+      setRingProgress(progress);
+
+      if (progress < 1) {
+        animateRing();
+      } else {
+        // Time's up — advance to next slide (loop at end)
+        const nextIdx = (currentIndex + 1) % slides.length;
+        setSlide(nextIdx, true);
+        // After spring, reset and restart
+        setTimeout(() => {
+          setRingProgress(0);
+          scheduleAutoAdvance(AUTO_ADV_MS);
+        }, 520);
+      }
+    });
+  }
+
+  function stopAutoAdvance() {
+    if (autoAdvRAF) {
+      cancelAnimationFrame(autoAdvRAF);
+      autoAdvRAF = null;
+    }
+    clearTimeout(autoAdvTimer);
+    autoAdvTimer = null;
+    setRingProgress(0);
+  }
+
+  function setRingProgress(progress) {
+    // progress 0 → ring empty (offset = RING_CIRC)
+    // progress 1 → ring full (offset = 0)
+    const offset = RING_CIRC * (1 - progress);
+    $ringFill.style.strokeDashoffset = offset.toFixed(2);
+  }
+
+  function onFeedTouch() {
+    // Called on any touch in the feed — cancels and reschedules auto-advance
+    stopAutoAdvance();
+    feedHadTouch = true;
+    const resumeDelay = AUTO_ADV_RESUME_MS;
+    // Schedule restart after 8s
+    autoAdvTimer = setTimeout(() => {
+      autoAdvStart = performance.now();
+      autoAdvDuration = AUTO_ADV_MS;
+      animateRing();
+    }, resumeDelay);
   }
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      BUILD SLIDES FROM DATA
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   function buildSlidesFromClientes(clientes) {
-    // Flatten: 11 clients × 5 photos = 55 slides
     slides = [];
+    SLIDES_SRCS = [];
+
     clientes.forEach(c => {
       c.imagens.forEach((src, photoIdx) => {
         slides.push({
           src,
-          cliente:    c.cliente,
-          cidade:     c.cidade,
-          categoria:  c.categoria,
-          photoIndex: photoIdx,      // 0–4 within client
+          cliente:     c.cliente,
+          cidade:      c.cidade,
+          categoria:   c.categoria,
+          descricao:   c.descricao  || '',
+          stats:       c.stats      || [],
+          photoIndex:  photoIdx,
           totalPhotos: c.imagens.length,
         });
+        SLIDES_SRCS.push(src);
       });
     });
 
-    // Create DOM elements
     $container.innerHTML = '';
     slideEls = [];
 
@@ -766,7 +1136,6 @@
       slideEls.push(el);
     });
 
-    // Set initial positions without animation
     positionSlides(false);
     updateUI(0, false);
   }
@@ -782,7 +1151,6 @@
     img.alt = `${data.cliente} — foto ${data.photoIndex + 1}`;
     img.src = data.src;
 
-    // Error → show placeholder, hide img
     const placeholder = document.createElement('div');
     placeholder.className = 'slide-placeholder';
     placeholder.innerHTML = `<span class="slide-placeholder-mark">VP</span>`;
@@ -798,7 +1166,6 @@
     /* Top bar */
     const topbar = document.createElement('div');
     topbar.className = 'slide-topbar';
-    // Pad counter: "01 / 55"
     const counterStr = `${String(idx + 1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
     topbar.innerHTML = `
       <div class="slide-logo">Vertical<strong>Parts</strong></div>
@@ -812,13 +1179,12 @@
     progressFill.className = 'slide-progress-fill';
     progressTrack.appendChild(progressFill);
 
-    /* Photo dots (which of 5 photos in this client) */
+    /* Photo dots */
     const dotsEl = document.createElement('div');
     dotsEl.className = 'slide-dots';
     for (let d = 0; d < data.totalPhotos; d++) {
       const dot = document.createElement('div');
       dot.className = 'slide-dot';
-      // height varies: inactive 6px, active set by .active class
       dot.style.height = '6px';
       if (d === data.photoIndex) dot.classList.add('active');
       dotsEl.appendChild(dot);
@@ -840,9 +1206,24 @@
     cityEl.className = 'slide-city';
     cityEl.textContent = data.cidade;
 
+    const descEl = document.createElement('div');
+    descEl.className = 'slide-desc';
+    descEl.textContent = data.descricao;
+
+    const statsEl = document.createElement('div');
+    statsEl.className = 'slide-stats';
+    data.stats.forEach(stat => {
+      const chip = document.createElement('span');
+      chip.className = 'slide-stat-chip';
+      chip.textContent = stat;
+      statsEl.appendChild(chip);
+    });
+
     bottom.appendChild(categoryEl);
     bottom.appendChild(clientEl);
     bottom.appendChild(cityEl);
+    bottom.appendChild(descEl);
+    bottom.appendChild(statsEl);
 
     /* Assemble */
     el.appendChild(img);
@@ -858,13 +1239,11 @@
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      POSITION ALL SLIDES
-     Called during drag (offset = dragDelta) and on settle
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   function positionSlides(animate, dragOffset = 0) {
     const stageH = $stage.offsetHeight;
 
     slideEls.forEach((el, i) => {
-      // Base position relative to current: each step is 100% stage height
       const baseY = (i - currentIndex) * stageH + dragOffset;
 
       if (animate) {
@@ -878,7 +1257,7 @@
   }
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SET SLIDE — update active state and all UI
+     SET SLIDE
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   function setSlide(idx, animate) {
     if (idx < 0 || idx >= slides.length) return;
@@ -886,22 +1265,16 @@
     const prev = currentIndex;
     currentIndex = idx;
 
-    // Remove active from old slide, add to new
     if (slideEls[prev]) {
       slideEls[prev].classList.remove('active');
-      // Reset Ken Burns by removing and re-adding (force reflow on next activation)
       const prevImg = slideEls[prev].querySelector('.slide-img');
-      if (prevImg) {
-        prevImg.style.animation = 'none';
-      }
+      if (prevImg) prevImg.style.animation = 'none';
     }
 
     slideEls[idx].classList.add('active');
 
-    // Re-trigger Ken Burns on new active slide
     const activeImg = slideEls[idx].querySelector('.slide-img');
     if (activeImg) {
-      // Force reflow to restart animation
       void activeImg.offsetWidth;
       activeImg.style.animation = '';
     }
@@ -911,26 +1284,24 @@
   }
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     UPDATE UI ELEMENTS
-     Progress bar + text reveal animation
+     UPDATE UI
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   function updateUI(idx, animate) {
     const total = slides.length;
     const pct   = total > 1 ? (idx / (total - 1)) * 100 : 0;
 
-    // Update progress bar on the ACTIVE slide
     const activeEl = slideEls[idx];
     if (!activeEl) return;
 
     const fill = activeEl.querySelector('.slide-progress-fill');
     if (fill) fill.style.height = `${pct}%`;
 
-    // Text reveal animation on the new active slide
     if (animate) {
       triggerTextReveal(activeEl);
     } else {
-      // No animation — just show text immediately
-      const els = activeEl.querySelectorAll('.slide-category, .slide-client, .slide-city');
+      const els = activeEl.querySelectorAll(
+        '.slide-category, .slide-client, .slide-city, .slide-desc, .slide-stats'
+      );
       els.forEach(e => {
         e.style.opacity = '1';
         e.style.transform = 'none';
@@ -943,26 +1314,27 @@
       slideEl.querySelector('.slide-category'),
       slideEl.querySelector('.slide-client'),
       slideEl.querySelector('.slide-city'),
+      slideEl.querySelector('.slide-desc'),
+      slideEl.querySelector('.slide-stats'),
     ];
 
     items.forEach((el, i) => {
       if (!el) return;
-      // Reset
       el.style.opacity = '0';
       el.style.transform = 'translateY(24px)';
       el.style.animation = 'none';
       el.classList.remove('reveal-in');
 
-      // Stagger 60ms apart
+      // Stagger: 60ms base, desc/stats have an extra gap after city
+      const delay = i <= 2 ? i * 60 : 180 + (i - 3) * 70;
       setTimeout(() => {
         el.style.animation = '';
         el.classList.add('reveal-in');
-        // Clean up after animation completes so it persists
         setTimeout(() => {
           el.style.opacity  = '1';
           el.style.transform = 'none';
         }, 440);
-      }, i * 60);
+      }, delay);
     });
   }
 
@@ -971,19 +1343,32 @@
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   function onTouchStart(e) {
     if (isAnimating) return;
-    resetIdle();
 
-    // Only activate in feed
-    if (!$feed.classList.contains('visible')) return;
-    // Don't intercept FAB / overlay touches
+    const inFeed = $feed.classList.contains('visible');
+    const inHome = !inFeed && !$home.classList.contains('hidden');
+
+    if (inHome) {
+      // Any touch on home: exit attract mode and reset attract timer
+      if (isAttractMode) {
+        exitAttractMode();
+        resetAttractTimer();
+        return; // eat this touch — don't enter feed immediately
+      }
+      resetAttractTimer();
+      return;
+    }
+
+    if (!inFeed) return;
     if ($overlay.classList.contains('open')) return;
-    if (e.target.closest('#fab') || e.target.closest('#contact-overlay')) return;
+    if (e.target.closest('#fab-wrap') || e.target.closest('#contact-overlay')) return;
 
-    isDragging   = true;
-    touchStartY  = e.touches[0].clientY;
-    touchCurY    = touchStartY;
+    resetIdle();
+    onFeedTouch(); // cancel/reset auto-advance
 
-    // Remove transitions during drag — finger must follow with zero lag
+    isDragging  = true;
+    touchStartY = e.touches[0].clientY;
+    touchCurY   = touchStartY;
+
     slideEls.forEach(el => { el.style.transition = 'none'; });
   }
 
@@ -995,16 +1380,13 @@
     touchCurY = e.touches[0].clientY;
     let delta = touchCurY - touchStartY;
 
-    const stageH = $stage.offsetHeight;
     const atFirst = currentIndex === 0;
     const atLast  = currentIndex === slides.length - 1;
 
-    // Rubber band at boundaries
     if ((delta > 0 && atFirst) || (delta < 0 && atLast)) {
       delta *= RUBBER_FACTOR;
     }
 
-    // Shift all slides by delta — no transition, instant
     positionSlides(false, delta);
   }
 
@@ -1013,33 +1395,27 @@
     isDragging = false;
     resetIdle();
 
-    const stageH = $stage.offsetHeight;
-    const delta  = touchCurY - touchStartY;
-    const absDelta = Math.abs(delta);
-
-    const atFirst = currentIndex === 0;
-    const atLast  = currentIndex === slides.length - 1;
+    const stageH    = $stage.offsetHeight;
+    const delta     = touchCurY - touchStartY;
+    const absDelta  = Math.abs(delta);
+    const atFirst   = currentIndex === 0;
+    const atLast    = currentIndex === slides.length - 1;
     const threshold = stageH * SNAP_THRESH;
 
     isAnimating = true;
 
     if (absDelta > threshold) {
       if (delta < 0 && !atLast) {
-        // Swipe up → next slide
         setSlide(currentIndex + 1, true);
       } else if (delta > 0 && !atFirst) {
-        // Swipe down → previous slide
         setSlide(currentIndex - 1, true);
       } else {
-        // At boundary — snap back
         positionSlides(true, 0);
       }
     } else {
-      // Below threshold — snap back to current
       positionSlides(true, 0);
     }
 
-    // Re-enable interactions after spring completes
     setTimeout(() => { isAnimating = false; }, 520);
   }
 
@@ -1049,12 +1425,17 @@
   function openContact() {
     $overlay.classList.add('open');
     $overlay.setAttribute('aria-hidden', 'false');
+    stopAutoAdvance();
     resetIdle();
   }
 
   function closeContact() {
     $overlay.classList.remove('open');
     $overlay.setAttribute('aria-hidden', 'true');
+    // Resume auto-advance if feed is visible
+    if ($feed.classList.contains('visible')) {
+      scheduleAutoAdvance(AUTO_ADV_RESUME_MS);
+    }
     resetIdle();
   }
 
@@ -1063,15 +1444,28 @@
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   $homeBtn.addEventListener('click', enterFeed);
 
-  $fab.addEventListener('click', openContact);
+  $fab.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openContact();
+  });
   $backBtn.addEventListener('click', closeContact);
 
   $stage.addEventListener('touchstart', onTouchStart, { passive: true });
   $stage.addEventListener('touchmove',  onTouchMove,  { passive: false });
   $stage.addEventListener('touchend',   onTouchEnd,   { passive: true });
 
-  // Idle timer resets on any touch anywhere
-  document.addEventListener('touchstart', resetIdle, { passive: true });
+  // Also handle clicks on home button for desktop/testing
+  $stage.addEventListener('click', (e) => {
+    const inHome = !$feed.classList.contains('visible') && !$home.classList.contains('hidden');
+    if (inHome) {
+      if (isAttractMode) {
+        exitAttractMode();
+        resetAttractTimer();
+      } else {
+        resetAttractTimer();
+      }
+    }
+  });
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      INIT — load clientes.json and boot
@@ -1085,20 +1479,21 @@
       clientes = await res.json();
     } catch (err) {
       console.warn('clientes.json não carregado:', err);
-      // Fallback: 11 placeholder clients × 5 photos
       clientes = Array.from({ length: 11 }, (_, ci) => ({
         id: `cliente_${ci + 1}`,
         cliente: `Cliente ${String(ci + 1).padStart(2,'0')}`,
         cidade: 'São Paulo, SP',
         categoria: 'Escadas Rolantes',
-        imagens: Array.from({ length: 5 }, (_, pi) => ''),
+        descricao: 'Serviço de manutenção e instalação de equipamentos.',
+        stats: ['5 unidades', 'Alto fluxo'],
+        imagens: Array.from({ length: 5 }, () => ''),
       }));
     }
 
     buildSlidesFromClientes(clientes);
 
-    // Start idle timer only on home (feed isn't visible yet)
-    // Timer is reset on first touch → enterFeed
+    // Start attract timer — nobody has touched yet
+    resetAttractTimer();
   }
 
   init();
