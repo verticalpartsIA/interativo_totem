@@ -95,12 +95,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
 /* ═══════════════════════════════════════════════════════════ */
 #s-attract{background:#0a0a0a}
 
-/* Hero: ocupa os primeiros 37% da altura */
+/* Hero: ocupa os primeiros 37% da altura do app */
 .attract-hero-wrap{
   position:absolute;
   top:0;left:0;right:0;
   height:37%;
   overflow:hidden;
+  z-index:1;
 }
 .attract-hero-wrap > img.hero-photo{
   width:100%;height:100%;object-fit:cover;display:block;
@@ -137,8 +138,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
   top:37%;left:0;right:0;bottom:0;
   display:grid;
   grid-template-rows:repeat(4,1fr);
-  gap:10px;
-  padding:10px 16px 14px;
+  gap:8px;
+  padding:8px 14px 12px;
+  z-index:2;
 }
 .attract-row{
   display:grid;
@@ -435,7 +437,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
   <div class="attract-hero-wrap">
     <img class="hero-photo" src="assets/clientes/aeroporto_brasilia/001.jpg" alt="Escada rolante VerticalParts">
     <div class="attract-logo-wrap">
-      <img class="attract-logo" src="" alt="VerticalParts">
+      <img class="attract-logo" src="https://raw.githubusercontent.com/verticalpartsIA/vp-design-system/master/public/logo-color.png" alt="VerticalParts" style="width:180px;height:auto;display:block">
     </div>
   </div>
 
@@ -964,7 +966,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Se
 <script>
 /* ─── LOGOS ─────────────────────────────────────────────────── */
 const LOGO_COLOR = 'https://raw.githubusercontent.com/verticalpartsIA/vp-design-system/master/public/logo-color.png';
-document.querySelectorAll('.logo-badge img, .attract-logo').forEach(img => { img.src = LOGO_COLOR; });
+document.querySelectorAll('.logo-badge img').forEach(img => { img.src = LOGO_COLOR; });
 
 
 /* ─── OBRAS GRID ─────────────────────────────────────────────── */
